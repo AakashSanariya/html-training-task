@@ -3,9 +3,11 @@
 
 .lets-talk {
   background: linear-gradient(280deg, #89c7fb, #c8d5f9 62.02%, #f9f9f4);
+  margin-bottom: 50px;
 
   @include mediaQuery($device-lg) {
     max-width: none;
+    margin-bottom: 100px;
   }
 
   &__inner {
@@ -82,6 +84,7 @@
             @include fontSize(14px, 22px);
             font-weight: 400;
             color: $primary-color;
+            text-decoration: none;
 
             @include mediaQuery($device-lg) {
                 @include fontSize(20px, 26px);
@@ -115,7 +118,8 @@
         &--desktop {
             display: none;
             @include mediaQuery($device-lg) {
-                display: block;
+                @include flex;
+                gap: 20px;
                 padding-top: 50px;
             }
         }
