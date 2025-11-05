@@ -1,0 +1,30 @@
+@mixin flex {
+    display: flex;
+}
+
+@mixin flexJustifyContentCenter {
+    justify-content: center;
+}
+
+@mixin flexAlignCenter {
+    align-items: center;
+}
+
+@mixin flexSpaceBetween {
+    justify-content: space-between;
+}
+
+@mixin flexEvenly {
+    justify-content: space-evenly;
+}
+
+@mixin fontSize($size, $line-height) {
+	font-size: $size;
+	line-height: $line-height;
+}
+
+@mixin mediaQuery($device-size) {
+    @media (min-width: $device-size) {
+        @content;
+    }
+}

@@ -1,0 +1,29 @@
+@use "./mixin" as *;
+@use "./variable" as *;
+
+.btn {
+  width: 100%;
+  &--primary {
+    @include flex;
+    @include flexAlignCenter;
+    @include flexJustifyContentCenter;
+    height: 54px;
+    width: 180px;
+    background-color: $primary-color;
+    color: $white;
+    border: 1px solid $primary-color;
+    @include fontSize(16px, 24px);
+    font-weight: 500;
+    border-radius: 30px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $white;
+        color: $primary-color;
+    }
+  }
+
+  &--full-width {
+    width: 100%;
+  }
+}

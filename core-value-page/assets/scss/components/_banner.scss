@@ -1,0 +1,40 @@
+@use "../common/variable" as *;
+@use "../common/mixin" as *;
+
+.banner-section {
+  max-width: none;
+  margin-bottom: 100px;
+  padding: 0;
+  &__inner {
+    width: 100%;
+    height: 185px;
+    background: linear-gradient(
+      102.22deg,
+      #cfdbf7 -18.94%,
+      #f7f9ff 49.1%,
+      #ebdffa 107.77%
+    );
+    padding: 0 20px;
+    @include flex;
+    @include flexAlignCenter;
+    justify-content: flex-start;
+    
+    &--heading {
+      @include fontSize(32px, 38px);
+      font-weight: 600;
+    }
+  
+    @include mediaQuery($device-lg) {
+      @include flexJustifyContentCenter;
+      border-radius: 60px;
+      height: 350px;
+      justify-items: flex-start;
+      &--heading {
+        @include fontSize(52px, 70px);
+      }
+    }
+  }
+  @include mediaQuery($device-lg) {
+    padding: 0 23px;
+  }
+}

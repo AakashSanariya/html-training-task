@@ -1,0 +1,50 @@
+@use "../common/variable" as *;
+@use "../common/mixin" as *;
+
+.our-client {
+  flex-direction: column;
+  @include flexAlignCenter;
+  gap: 70px;
+
+  &__item {
+    @include flex;
+    @include flexAlignCenter;
+    @include flexSpaceBetween;
+    text-align: center;
+    flex-direction: column;
+    max-width: 335px;
+    margin-bottom: 50px;
+
+    &--heading-txt {
+      @include fontSize(26px, 36px);
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    &--description {
+      @include fontSize(16px, 24px);
+      font-weight: 400;
+      color: $text-gray;
+    }
+
+    &:last-child {
+      border-top: 2px solid $light-gray;
+      padding-top: 70px;
+    }
+  }
+
+  @include mediaQuery($device-lg) {
+    flex-direction: row;
+    width: 735px;
+    height: 203px;
+    
+    &__item {
+      &:last-child {
+        border-left: 2px solid $lighter-gray;
+        padding-left: 70px;
+        border-top: none;
+        padding-top: 0;
+      }
+    }
+  }
+}

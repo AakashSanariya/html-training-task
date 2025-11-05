@@ -1,0 +1,103 @@
+@use "../common/mixin" as *;
+@use "../common/variable" as *;
+
+.service-section {
+  margin-bottom: 100px;
+  &__list {
+    margin: 0;
+    padding: 0;
+
+    &__item {
+      @include flex;
+      @include flexJustifyContentCenter;
+      @include flexAlignCenter;
+      position: relative;
+      height: 280px;
+      width: 100%;
+      margin-bottom: 20px;
+      background-color: $black;
+      cursor: pointer;
+      z-index: 1;
+      border-radius: 20px;
+
+      &--bg-img {
+        opacity: 0.4;
+        position: absolute;
+        object-fit: cover;
+        height: 280px;
+        width: 100%;
+        border-radius: 20px;
+      }
+
+      &--heading-txt {
+        position: absolute;
+        @include flex;
+        @include flexJustifyContentCenter;
+        @include fontSize(32px, 38px);
+        font-weight: 600;
+        color: $white;
+        opacity: 1;
+      }
+
+      &__sub-item {
+        @include flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        z-index: 1;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(20px);
+        transition-duration: 0.3s;
+        padding: 16px;
+        gap: 20px;
+
+        &--sub-heading-txt {
+          color: $white;
+          @include fontSize(26px, 36px);
+          font-weight: 600;
+          justify-content: flex-start;
+          margin-bottom: 0;
+        }
+
+        &--description {
+          color: $white;
+        }
+      }
+      &:hover {
+        .service-section__list__item__sub-item {
+          visibility: visible;
+          opacity: 1;
+          transform: translateY(0px);
+          transition-duration: 0.3s;
+        }
+        .service-section__list__item--heading-txt {
+          visibility: hidden;
+          opacity: 0;
+          transform: translateY(0px);
+          transition: 0.3s;
+        }
+      }
+    }
+  }
+
+  @include mediaQuery($device-lg) {
+    &__list {
+      @include flex;
+      @include flexSpaceBetween;
+      flex-wrap: wrap;
+      gap: 30px;
+
+      &__item {
+        max-width: 555px;
+        height: 280px;
+        background-color: $black;
+
+        &--heading-txt {
+          @include fontSize(52px, 70px);
+          opacity: 1;
+          padding: 20px;
+        }
+      }
+    }
+  }
+}

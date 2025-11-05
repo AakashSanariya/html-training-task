@@ -1,0 +1,97 @@
+@use "../common/mixin" as *;
+@use "../common/variable" as *;
+
+.header {
+  @include flex;
+  @include flexAlignCenter;
+  @include flexSpaceBetween;
+  height: 90px;
+  width: 100%;
+  box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.051);
+  background-color: $white;
+  
+
+  &__container {
+    @include flex;
+    @include flexSpaceBetween;
+    align-items: center;
+    width: 100%;
+  }
+
+  &--logo {
+    height: 32px;
+    width: 144px;
+    object-fit: cover;
+  }
+
+  &__main-menu {
+    &__list {
+      @include flex;
+      @include flexAlignCenter;
+      gap: 25px;
+
+      &--item {
+        @include flex;
+        @include flexAlignCenter;
+        @include fontSize(13px, 52px);
+        font-weight: 500;
+        cursor: pointer;
+        &:hover {
+          color: $primary-color;
+        }
+
+        .icon-drp {
+          padding-left: 7px;
+          @include fontSize(4px, 52px);
+        }
+      }
+
+      &--link {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__search {
+    @include flex;
+    @include flexAlignCenter;
+
+    &--btn-lets-talk {
+      width: 128px;
+      height: 46px;
+      background-color: $primary-color;
+      color: $white;
+      border: 2px solid $primary-color;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: rgba(0, 0, 0, 0.1);
+      @include fontSize(15px, 20px);
+      font-weight: 600;
+      margin-right: 25px;
+      &:hover {
+        background-color: $white;
+        color: $primary-color;
+      }
+    }
+
+    &--pipe {
+        color: $light-gray;
+        margin-right: 15px;
+    }
+
+    &--icon {
+        @include flex;
+        @include flexJustifyContentCenter;
+        @include flexAlignCenter;
+        height: 40px;
+        width: 40px;
+        background: $light-gray;
+        border-radius: 50%;
+
+        .icon-search:before {
+            font-size: 17px;
+            font-weight: normal;
+        }
+    }
+  }
+}

@@ -1,0 +1,218 @@
+@use "../common/mixin" as *;
+@use "../common/variable" as *;
+
+.lets-talk {
+  background: linear-gradient(280deg, #89c7fb, #c8d5f9 62.02%, #f9f9f4);
+
+  @include mediaQuery($device-lg) {
+    max-width: none;
+  }
+
+  &__inner {
+    @include flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 25px;
+    width: 100%;
+
+    @include mediaQuery($device-lg) {
+        flex-direction: row;
+        padding-top: 100px;
+        gap: 107px;
+        @include flexJustifyContentCenter;
+    }
+
+
+    &__left {
+      padding-top: 60px;
+      width: 100%;
+
+      @include mediaQuery($device-lg) {
+        padding-left: 120px;
+        padding-top: 125px;
+        width: auto;
+      }
+
+      &--heading {
+        @include fontSize(26px, 36px);
+        font-weight: 600;
+
+        @include mediaQuery($device-lg) {
+            @include fontSize(42px, 56px);
+            padding-bottom: 50px;
+        }
+      }
+
+      &__contact-list {
+        @include flex;
+        @include flexJustifyContentCenter;
+        @include flexAlignCenter;
+        gap: 15px;
+
+        &__item {
+          width: 50%;
+          background-color: $white;
+          border: 1px solid $border-gray;
+          border-radius: 10px;
+          padding: 15px 16px;
+          @include flex;
+          flex-direction: column;
+          gap: 5px;
+          position: relative;
+
+          @include mediaQuery($device-lg) {
+                gap: 8px;
+            }
+
+          &--telphone {
+            position: absolute;
+            color: $primary-color;
+            right: 8px;
+            top: 10px;
+          }
+
+          &--heading {
+            @include fontSize(14px, 22px);
+            font-weight: 400;
+            color: $text-gray;
+            margin-bottom: 0;
+          }
+
+          &--mobile-no {
+            @include fontSize(14px, 22px);
+            font-weight: 400;
+            color: $primary-color;
+
+            @include mediaQuery($device-lg) {
+                @include fontSize(20px, 26px);
+            }
+          }
+
+          &--country {
+            @include fontSize(14px, 21px);
+            font-weight: 400;
+            margin-bottom: 0;
+
+            @include mediaQuery($device-lg) {
+                @include fontSize(16px, 24px);
+            }
+          }
+        }
+      }
+
+      &__company {
+        order: 1;
+        @include flex;
+        align-items: flex-start;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 50px;
+
+        @include mediaQuery($device-lg) {
+            display: none;
+        }
+
+        &--desktop {
+            display: none;
+            @include mediaQuery($device-lg) {
+                display: block;
+                padding-top: 50px;
+            }
+        }
+
+        &--heading {
+          width: 100%;
+          @include fontSize(16px, 22px);
+          font-weight: 500;
+          @include flex;
+          @include flexAlignCenter;
+          gap: 18px;
+          white-space: nowrap;
+
+          &::after {
+            content: "";
+            display: inline-block;
+            height: 2px;
+            width: 100%;
+            background: $gray-shade-three;
+          }
+        }
+
+        &__list {
+          display: grid;
+          grid-template-columns: auto auto auto;
+          row-gap: 20px;
+          column-gap: 50px;
+          width: 100%;
+        }
+      }
+    }
+
+    &__right {
+      @include flex;
+      @include flexJustifyContentCenter;
+      width: 100%;
+      margin-bottom: 25px;
+
+      @include mediaQuery($device-lg) {
+        width: auto;
+      }
+
+      &__card {
+        width: 100%;
+
+        &__heading {
+          @include flex;
+          @include flexJustifyContentCenter;
+          @include flexAlignCenter;
+          background-color: $gray-shade-three;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+          height: 54px;
+          color: $white;
+
+          &--title {
+            @include fontSize(18px, 24px);
+            font-weight: 500;
+            margin: 0;
+
+            @include mediaQuery($device-lg) {
+                @include fontSize(20px, 24px);
+            }
+          }
+        }
+
+        &__body {
+          padding: 20px;
+          background: $white;
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+
+          @include mediaQuery($device-lg) {
+            padding: 30px;
+          }
+
+          &__row {
+            @include flex;
+            @include flexJustifyContentCenter;
+            @include flexAlignCenter;
+            gap: 15px;
+            flex-direction: column;
+
+            @include mediaQuery($device-lg) {
+                flex-direction: row;
+            }
+
+            &--item {
+              width: 100%;
+            }
+
+            &--spacing {
+              margin: 15px 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

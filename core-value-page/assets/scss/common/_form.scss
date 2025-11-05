@@ -1,0 +1,65 @@
+@use "./mixin" as *;
+@use "./variable" as *;
+
+.form-control {
+  ::placeholder {
+    @include fontSize(14px, 21px);
+    font-weight: 400;
+    color: $text-gray;
+  }
+
+  :focus {
+    outline: none;
+  }
+
+  &__label {
+    display: inline-block;
+    @include fontSize(14px, 22px);
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+
+  &__input {
+    height: 46px;
+    width: 100%;
+    border: 1px solid $light-gray;
+    border-radius: 5px;
+    padding: 12px 0 12px 15px;
+  }
+
+  &__text-area {
+    height: 100%;
+    width: 100%;
+    border: 1px solid $light-gray;
+    border-radius: 5px;
+    padding: 12px 0 12px 15px;
+
+}
+
+  &__input-select {
+    @include flex;
+
+    &__list {
+      width: 72px;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      @include flex;
+      @include flexAlignCenter;
+      padding: 14px 15px;
+      gap: 9px;
+
+      &--icon {
+        font-size: 6px;
+      }
+    }
+
+    &--phone-no {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+
+  &--astrict {
+    color: $error;
+  }
+}
