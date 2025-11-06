@@ -3,7 +3,7 @@
 
 .footer {
   &__inner {
-    flex-direction: column;
+    display: block;
 
     @include mediaQuery($device-lg) {
       margin-bottom: 50px;
@@ -47,27 +47,30 @@
     }
 
     &__our-services {
-      @include flex;
-      @include flexSpaceBetween;
-      @include flexAlignCenter;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 20px;
 
       @include mediaQuery($device-lg) {
         padding-top: 50px;
-        flex-wrap: nowrap;
+        grid-template-columns: repeat(3, 1fr);
       }
 
       &__item {
+        grid-column: span 2 / span 2;
+
         @include mediaQuery($device-lg) {
-          min-width: 35%;
+          grid-column: auto;
         }
 
         &--heading {
           @include fontSize(20px, 26px);
           font-weight: 500;
+          padding: 20px 0;
+          margin: 0;
 
           @include mediaQuery($device-lg) {
+            @include fontSize(24px, 34px);
             padding-bottom: 20px;
             margin: 0;
           }
@@ -77,6 +80,8 @@
           @include fontSize(14px, 22px);
           font-weight: 400;
           color: $text-gray;
+          padding: 20px 0;
+          margin: 0;
         }
 
         &__input {
@@ -176,7 +181,14 @@
       }
     }
   }
+
   &__copy-right {
+    &__inner {
+      @include mediaQuery($device-lg) {
+        flex-direction: column;  
+        padding: 0;
+      }
+    }
     @include flex;
     @include flexJustifyContentCenter;
     border-top: 1px solid $icon-gray-color;

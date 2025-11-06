@@ -3,9 +3,23 @@
 
 .service-section {
   margin-bottom: 100px;
+
+  @include mediaQuery($device-lg) {
+    max-width: none;
+    padding: 0 120px;
+  }
+
   &__list {
     margin: 0;
     padding: 0;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+
+    @include mediaQuery($device-lg) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
 
     &__item {
       @include flex;
@@ -19,6 +33,11 @@
       cursor: pointer;
       z-index: 1;
       border-radius: 20px;
+
+      @include mediaQuery($device-lg) {
+        height: 280px;
+        background-color: $black;
+      }
 
       &--bg-img {
         opacity: 0.4;
@@ -37,6 +56,12 @@
         font-weight: 600;
         color: $white;
         opacity: 1;
+
+        @include mediaQuery($device-lg) {
+          @include fontSize(52px, 70px);
+          opacity: 1;
+          padding: 20px;
+        }
       }
 
       &__sub-item {
@@ -75,27 +100,6 @@
           opacity: 0;
           transform: translateY(0px);
           transition: 0.3s;
-        }
-      }
-    }
-  }
-
-  @include mediaQuery($device-lg) {
-    &__list {
-      @include flex;
-      @include flexSpaceBetween;
-      flex-wrap: wrap;
-      gap: 30px;
-
-      &__item {
-        max-width: 555px;
-        height: 280px;
-        background-color: $black;
-
-        &--heading-txt {
-          @include fontSize(52px, 70px);
-          opacity: 1;
-          padding: 20px;
         }
       }
     }

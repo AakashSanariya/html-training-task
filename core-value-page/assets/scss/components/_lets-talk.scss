@@ -30,8 +30,7 @@
       width: 100%;
 
       @include mediaQuery($device-lg) {
-        padding-left: 120px;
-        padding-top: 125px;
+        padding-top: 0;
         width: auto;
       }
 
@@ -42,6 +41,8 @@
         @include mediaQuery($device-lg) {
             @include fontSize(42px, 56px);
             padding-bottom: 50px;
+            padding-top: 25px;
+            width: 99%;
         }
       }
 

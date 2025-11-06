@@ -5,6 +5,7 @@
   flex-direction: column;
   @include flexAlignCenter;
   gap: 70px;
+  margin-bottom: 50px;
 
   &__item {
     @include flex;
@@ -13,7 +14,6 @@
     text-align: center;
     flex-direction: column;
     max-width: 335px;
-    margin-bottom: 50px;
 
     &--heading-txt {
       @include fontSize(26px, 36px);
