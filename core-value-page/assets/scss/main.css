@@ -96,7 +96,7 @@ ul, li {
 
 @font-face {
   font-family: "Poppins";
-  src: url("../fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+  src: url("../fonts/Poppins/Poppins-Regular.ttf");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -154,6 +154,10 @@ ul, li {
   content: "\e907";
 }
 
+.icon-hamburger:before {
+  content: "\e908";
+}
+
 .btn {
   width: 100%;
 }
@@ -201,6 +205,14 @@ ul, li {
   -o-object-fit: cover;
      object-fit: cover;
 }
+.header__main-menu {
+  display: none;
+}
+@media (min-width: 1200px) {
+  .header__main-menu {
+    display: block;
+  }
+}
 .header__main-menu__list {
   display: flex;
   align-items: center;
@@ -228,6 +240,12 @@ ul, li {
 .header__search {
   display: flex;
   align-items: center;
+  gap: 5px;
+}
+@media (min-width: 1200px) {
+  .header__search {
+    gap: 20px;
+  }
 }
 .header__search--btn-lets-talk {
   width: 128px;
@@ -241,15 +259,29 @@ ul, li {
   font-size: 15px;
   line-height: 20px;
   font-weight: 600;
-  margin-right: 25px;
 }
 .header__search--btn-lets-talk:hover {
   background-color: #ffffff;
   color: #1B76FE;
 }
-.header__search--pipe {
+.header__search__btn {
+  position: relative;
+}
+.header__search__btn::after {
+  display: none;
   color: #d9d9d9;
-  margin-right: 15px;
+}
+@media (min-width: 1200px) {
+  .header__search__btn::after {
+    content: "";
+    position: absolute;
+    background: #d9d9d9;
+    display: inline-block;
+    width: 1px;
+    height: 25px;
+    margin-left: 10px;
+    top: 10;
+  }
 }
 .header__search--icon {
   display: flex;
@@ -257,12 +289,32 @@ ul, li {
   align-items: center;
   height: 40px;
   width: 40px;
-  background: #d9d9d9;
-  border-radius: 50%;
+  border-radius: none;
+}
+@media (min-width: 1200px) {
+  .header__search--icon {
+    background: #d9d9d9;
+    border-radius: 50%;
+  }
 }
 .header__search--icon .icon-search:before {
   font-size: 17px;
   font-weight: normal;
+  display: none;
+}
+@media (min-width: 1200px) {
+  .header__search--icon .icon-search:before {
+    display: block;
+  }
+}
+.header__search--icon .icon-hamburger {
+  display: block;
+  font-size: 17px;
+}
+@media (min-width: 1200px) {
+  .header__search--icon .icon-hamburger {
+    display: none;
+  }
 }
 
 .banner-section {
@@ -470,7 +522,7 @@ ul, li {
 @media (min-width: 1200px) {
   .lets-talk__inner {
     flex-direction: row;
-    padding-top: 100px;
+    padding: 100px 0;
     gap: 107px;
     justify-content: center;
   }
@@ -566,6 +618,9 @@ ul, li {
   flex-direction: column;
   width: 100%;
   margin-bottom: 50px;
+}
+.lets-talk__inner__left__company li img {
+  max-width: 100%;
 }
 @media (min-width: 1200px) {
   .lets-talk__inner__left__company {
@@ -701,16 +756,26 @@ ul, li {
     display: flex;
     justify-content: space-between;
     gap: 20px;
+    position: relative;
   }
-  .footer__inner__images__links__container--item {
-    border-right: 1px solid #000000;
-    padding-right: 10px;
+  .footer__inner__images__links__container--item::after {
+    position: absolute;
+    content: "";
+    height: 17px;
+    width: 1px;
+    background: #191D26;
+    margin: 0px 10px;
+    top: 5px;
   }
   .footer__inner__images__links__container--item:last-child {
     border: none;
   }
+  .footer__inner__images__links__container--item:last-child::after {
+    width: 0;
+  }
   .footer__inner__images__links__container--item a {
     text-decoration: none;
+    color: #191D26;
     font-size: 14px;
     line-height: 21px;
     font-weight: 400;
@@ -836,7 +901,7 @@ ul, li {
 @media (min-width: 1200px) {
   .footer__inner__our-services__item__links {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.5fr 1fr;
     grid-column-gap: 25px;
     grid-row-gap: 10px;
   }
@@ -854,7 +919,10 @@ ul, li {
 .footer__copy-right {
   display: flex;
   justify-content: center;
-  border-top: 1px solid #808080;
+  border-top: 1px solid #EBEBEB;
+}
+.footer__copy-right__inner {
+  justify-content: center;
 }
 @media (min-width: 1200px) {
   .footer__copy-right__inner {
@@ -885,8 +953,9 @@ ul, li {
   .footer__copy-right__links--item::after {
     content: "";
     position: relative;
-    border-right: 1px solid black;
+    border-right: 1px solid #191D26;
     padding-right: 20px;
+    top: 2px;
   }
 }
 .footer__copy-right--cp-text {

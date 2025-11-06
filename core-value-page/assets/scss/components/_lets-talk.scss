@@ -19,7 +19,7 @@
 
     @include mediaQuery($device-lg) {
         flex-direction: row;
-        padding-top: 100px;
+        padding: 100px 0;
         gap: 107px;
         @include flexJustifyContentCenter;
     }
@@ -111,6 +111,12 @@
         flex-direction: column;
         width: 100%;
         margin-bottom: 50px;
+
+        li {
+          img {
+            max-width: 100%;
+          }
+        }
 
         @include mediaQuery($device-lg) {
             display: none;

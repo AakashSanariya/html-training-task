@@ -9,7 +9,6 @@
   width: 100%;
   box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.051);
   background-color: $white;
-  
 
   &__container {
     @include flex;
@@ -25,6 +24,11 @@
   }
 
   &__main-menu {
+    display: none;
+
+    @include mediaQuery($device-lg) {
+      display: block;
+    }
     &__list {
       @include flex;
       @include flexAlignCenter;
@@ -55,6 +59,11 @@
   &__search {
     @include flex;
     @include flexAlignCenter;
+    gap: 5px;
+
+    @include mediaQuery($device-lg) {
+      gap: 20px;
+    }
 
     &--btn-lets-talk {
       width: 128px;
@@ -67,31 +76,61 @@
       box-shadow: rgba(0, 0, 0, 0.1);
       @include fontSize(15px, 20px);
       font-weight: 600;
-      margin-right: 25px;
       &:hover {
         background-color: $white;
         color: $primary-color;
       }
+
+      
     }
 
-    &--pipe {
+    &__btn {
+      position: relative;
+      &::after {
+        display: none;
         color: $light-gray;
-        margin-right: 15px;
+        @include mediaQuery($device-lg) {
+          content: "";
+          position: absolute;
+          background: $light-gray;
+          display: inline-block;
+          width: 1px;
+          height: 25px;
+          margin-left: 10px;
+          top: 10;
+        }
+      }
     }
 
     &--icon {
-        @include flex;
-        @include flexJustifyContentCenter;
-        @include flexAlignCenter;
-        height: 40px;
-        width: 40px;
+      @include flex;
+      @include flexJustifyContentCenter;
+      @include flexAlignCenter;
+      height: 40px;
+      width: 40px;
+      border-radius: none;
+      
+      @include mediaQuery($device-lg) {
         background: $light-gray;
         border-radius: 50%;
+      }
 
-        .icon-search:before {
-            font-size: 17px;
-            font-weight: normal;
+      .icon-search:before {
+        font-size: 17px;
+        font-weight: normal;
+        display: none;
+        @include mediaQuery($device-lg) {
+          display: block;
         }
+      }
+
+      .icon-hamburger {
+        display: block;
+        font-size: 17px;
+        @include mediaQuery($device-lg) {
+          display: none;
+        }
+      }
     }
   }
 }

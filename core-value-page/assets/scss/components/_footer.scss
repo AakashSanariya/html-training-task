@@ -23,20 +23,31 @@
         border-bottom: 1px solid $light-gray;
 
         &__links {
-            display: block;
+          display: block;
           &__container {
             @include flex;
             @include flexSpaceBetween;
             gap: 20px;
-
+            position: relative;
             &--item {
-              border-right: 1px solid $black;
-              padding-right: 10px;
+              &::after {
+                position: absolute;
+                content: "";
+                height: 17px;
+                width: 1px;
+                background: $footer-link-color;
+                margin: 0px 10px;
+                top: 5px;
+              }
               &:last-child {
                 border: none;
+                &::after {
+                  width: 0;
+                }
               }
               a {
                 text-decoration: none;
+                color: $footer-link-color;
                 @include fontSize(14px, 21px);
                 font-weight: 400;
               }
@@ -160,7 +171,7 @@
         &__links {
           @include mediaQuery($device-lg) {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1.5fr 1fr;
             grid-column-gap: 25px;
             grid-row-gap: 10px;
 
@@ -184,17 +195,19 @@
 
   &__copy-right {
     &__inner {
+      justify-content: center;
+
       @include mediaQuery($device-lg) {
-        flex-direction: column;  
+        flex-direction: column;
         padding: 0;
       }
     }
     @include flex;
     @include flexJustifyContentCenter;
-    border-top: 1px solid $icon-gray-color;
+    border-top: 1px solid $lighter-gray;
 
     &__links {
-        display: none;
+      display: none;
     }
 
     @include mediaQuery($device-lg) {
@@ -215,8 +228,9 @@
           &::after {
             content: "";
             position: relative;
-            border-right: 1px solid black;
+            border-right: 1px solid $footer-link-color;
             padding-right: 20px;
+            top: 2px;
           }
         }
       }
