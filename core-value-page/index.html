@@ -6,6 +6,16 @@
 
     <!-- Viewport for responsiveness -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript">
+      function menuClick() {
+        const nodeElement = document.getElementById("menu-item");
+        if (nodeElement.classList.contains("header__main-menu__mobile")) {
+          nodeElement.classList.remove("header__main-menu__mobile");
+        } else {
+          nodeElement.classList.add("header__main-menu__mobile");
+        }
+      }
+    </script>
   </head>
   <body>
     <main>
@@ -20,12 +30,15 @@
               alt="Logo"
             />
           </div>
-          <nav class="header__main-menu">
+          <!-- For Mobile screen Toggle a this class: header__main-menu__mobile -->
+          <nav class="header__main-menu" id="menu-item">
             <ul class="header__main-menu__list">
               <li class="header__main-menu__list--item">
                 <a href="#" class="header__main-menu__list--link"
                   >Services <span class="icon-drp"></span
                 ></a>
+                <!-- This Span Tag only add for mobile -->
+                <span class="header__main-menu__list--item icon-drp"></span>
                 <div class="header__main-menu__list__sub-menu">
                   <div>
                     <ul class="header__main-menu__list__sub-menu__list">
@@ -64,24 +77,60 @@
                     </ul>
                   </div>
                   <div class="header__main-menu__list__sub-menu__right">
-                    <h2
-                      class="header__main-menu__list__sub-menu__right--heading"
-                    >
-                      Ecommerce
-                    </h2>
-                    <ul
-                      class="header__main-menu__list__sub-menu__right__item"
-                    >
-                      <li class="header__main-menu__list__sub-menu__right__item--link"><a href="#">Ecommerce Development</a></li>
-                      <li class="header__main-menu__list__sub-menu__right__item--link"><a href="#">Magento Development</a></li>
-                      <li class="header__main-menu__list__sub-menu__right__item--link"><a href="#">Shopify Development</a></li>
-                      <li class="header__main-menu__list__sub-menu__right__item--link"><a href="#">Odoo ERP Development</a></li>
-                      <li class="header__main-menu__list__sub-menu__right__item--link"><a href="#">BigCommerce Development</a></li>
-                      <li class="header__main-menu__list__sub-menu__right__item--link"><a href="#">WooCommerce Development</a></li>
-                      <li class="header__main-menu__list__sub-menu__right__item--link"><a href="#">CRM for eCommerce</a></li>
-                      <li class="header__main-menu__list__sub-menu__right__item--link"><a href="#">Mobile Commerce</a></li>
-                    </ul>
-                    
+                    <div>
+                      <h2
+                        class="header__main-menu__list__sub-menu__right--heading"
+                      >
+                        Ecommerce
+                      </h2>
+                      <ul class="header__main-menu__list__sub-menu__right__item">
+                        <li
+                          class="header__main-menu__list__sub-menu__right__item--link"
+                        >
+                          <a href="#">Ecommerce Development</a>
+                        </li>
+                        <li
+                          class="header__main-menu__list__sub-menu__right__item--link"
+                        >
+                          <a href="#">Magento Development</a>
+                        </li>
+                        <li
+                          class="header__main-menu__list__sub-menu__right__item--link"
+                        >
+                          <a href="#">Shopify Development</a>
+                        </li>
+                        <li
+                          class="header__main-menu__list__sub-menu__right__item--link"
+                        >
+                          <a href="#">Odoo ERP Development</a>
+                        </li>
+                        <li
+                          class="header__main-menu__list__sub-menu__right__item--link"
+                        >
+                          <a href="#">BigCommerce Development</a>
+                        </li>
+                        <li
+                          class="header__main-menu__list__sub-menu__right__item--link"
+                        >
+                          <a href="#">WooCommerce Development</a>
+                        </li>
+                        <li
+                          class="header__main-menu__list__sub-menu__right__item--link"
+                        >
+                          <a href="#">CRM for eCommerce</a>
+                        </li>
+                        <li
+                          class="header__main-menu__list__sub-menu__right__item--link"
+                        >
+                          <a href="#">Mobile Commerce</a>
+                        </li>
+                      </ul>
+
+                    </div>
+                    <div class="header__main-menu__list__sub-menu__right--search">
+                      <input type="text" class="form-control form-control__input" placeholder="Type here what you're looking for" name="Search" />
+                      <span class="icon-search" />
+                    </div>
                   </div>
                 </div>
               </li>
@@ -89,6 +138,8 @@
                 <a href="#" class="header__main-menu__list--link"
                   >Industries <span class="icon-drp"></span
                 ></a>
+                <!-- This Span Tag only add for mobile -->
+                <span class="header__main-menu__list--item icon-drp"></span>
               </li>
               <li class="header__main-menu__list--item">
                 <a href="#" class="header__main-menu__list--link">Products</a>
@@ -103,6 +154,8 @@
                 <a href="#" class="header__main-menu__list--link"
                   >Company <span class="icon-drp"></span
                 ></a>
+                <!-- This Span Tag only add for mobile -->
+                <span class="header__main-menu__list--item icon-drp"></span>
               </li>
             </ul>
           </nav>
@@ -110,10 +163,9 @@
             <div class="header__search__btn">
               <button class="header__search--btn-lets-talk">Let's Talk</button>
             </div>
-            <!-- <div class="header__search--pipe">|</div> -->
             <div class="header__search--icon">
               <span class="icon-search"></span>
-              <span class="icon-hamburger"></span>
+              <span class="icon-hamburger" onclick="menuClick()"></span>
             </div>
           </div>
         </div>
@@ -636,6 +688,9 @@
                   class="icon-twitter footer__inner__our-services__item__social-icon--item"
                 ></span>
                 <span
+                  class="icon-instagram footer__inner__our-services__item__social-icon--item"
+                ></span>
+                <span
                   class="icon-facebook footer__inner__our-services__item__social-icon--item"
                 ></span>
                 <span
@@ -750,6 +805,9 @@
                   ></span>
                   <span
                     class="icon-twitter footer__inner__our-services__item__social-icon--item"
+                  ></span>
+                  <span
+                    class="icon-instagram footer__inner__our-services__item__social-icon--item"
                   ></span>
                   <span
                     class="icon-facebook footer__inner__our-services__item__social-icon--item"

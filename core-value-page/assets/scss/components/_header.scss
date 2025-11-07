@@ -9,6 +9,9 @@
   width: 100%;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.051);
   background-color: $white;
+  position: fixed;
+  top: 0;
+  z-index: 111;
 
   &__container {
     @include flex;
@@ -25,27 +28,43 @@
   }
 
   &__main-menu {
-    display: none;
-
-    @include mediaQuery($device-lg) {
-      display: block;
+    &__mobile {
+      .header__main-menu__list {
+        left: 0;
+        transition: 0.3s all ease-in-out;
+      }
     }
-    &__list {
-      @include flex;
-      @include flexAlignCenter;
-      gap: 25px;
 
-      &:hover {
-        .header__main-menu__list__sub-menu {
-          visibility: visible;
-          transform: translateY(0px);
-          transition-duration: 0.3s;
-        }
+    &__list {
+      top: 90px;
+      position: fixed;
+      padding: 0 20px;
+      background-color: $white;
+      border: 1px solid $mobile-menu-border;
+      width: 100%;
+      align-items: flex-start;
+      z-index: 2;
+      height: 1012px;
+      left: 100%;
+      transition: 0.3s all ease-in-out;
+
+      @include mediaQuery($device-lg) {
+        @include flex;
+        @include flexAlignCenter;
+        gap: 25px;
+        visibility: visible;
+        position: initial;
+        height: auto;
+        background-color: transparent;
+        border: none;
+        flex-direction: row;
       }
 
       &__sub-menu {
         visibility: hidden;
         display: none;
+        opacity: 0;
+
         @include mediaQuery($device-lg) {
           visibility: hidden;
           transform: translateY(-20px);
@@ -53,7 +72,7 @@
           @include flex;
           box-shadow: 0 4px 20px rgba(0, 0, 0, 0.051);
           position: absolute;
-          top: 72px;
+          top: 68px;
           z-index: 2;
           background-color: $white;
           width: 100%;
@@ -105,6 +124,9 @@
         &__right {
           @include mediaQuery($device-lg) {
             padding-left: 45px;
+            @include flex;
+            justify-content: space-between;
+            flex-direction: column;
           }
 
           &--heading {
@@ -146,26 +168,82 @@
               }
             }
           }
+
+          &--search {
+            @include flex;
+            @include flexJustifyContentCenter;
+            @include flexAlignCenter;
+            position: relative;
+
+            .form-control__input {
+              border-radius: 28px;
+            }
+
+            .icon-search {
+              position: absolute;
+              right: 20px;
+            }
+          }
         }
       }
 
       &--item {
+        border-bottom: 1px solid $mobile-menu-border;
+        width: 100%;
+        height: 55px;
+        @include flexSpaceBetween;
+        padding: 0 16px;
         @include flex;
         @include flexAlignCenter;
 
-        .icon-drp {
-          padding-left: 7px;
-          @include fontSize(4px, 52px);
+        @include mediaQuery($device-lg) {
+          border: none;
+          width: auto;
+          height: 0;
+          padding: 0;
+        }
+
+        &:hover {
+          .header__main-menu__list__sub-menu {
+            visibility: visible;
+            transform: translateY(0px);
+            transition-duration: 0.3s;
+            opacity: 1;
+          }
+        }
+
+        &.icon-drp {
+          font-size: 8px;
+          justify-content: flex-end;
+
+          @include mediaQuery($device-lg) {
+            display: none;
+          }
         }
       }
 
       &--link {
-        @include fontSize(13px, 52px);
-        font-weight: 500;
         text-decoration: none;
+        @include fontSize(16px, 25px);
+        font-weight: 600;
+
+        @include mediaQuery($device-lg) {
+          @include fontSize(13px, 52px);
+          font-weight: 500;
+        }
+
         &:hover {
           cursor: pointer;
           color: $primary-color;
+        }
+        .icon-drp {
+          display: none;
+
+          @include mediaQuery($device-lg) {
+            display: inline-block;
+            padding-left: 7px;
+            @include fontSize(4px, 52px);
+          }
         }
       }
     }
@@ -223,7 +301,8 @@
       width: 30px;
       border-radius: 3px;
       background: $white;
-      box-shadow: 0 4px 33px rgba(0,0,0,.09);
+      box-shadow: 0 4px 33px rgba(0, 0, 0, 0.09);
+      cursor: pointer;
 
       @include mediaQuery($device-lg) {
         background: $light-gray;
@@ -244,6 +323,7 @@
       .icon-hamburger {
         display: block;
         font-size: 17px;
+
         @include mediaQuery($device-lg) {
           display: none;
         }
