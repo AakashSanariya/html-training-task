@@ -7,7 +7,7 @@
   @include flexSpaceBetween;
   height: 90px;
   width: 100%;
-  box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.051);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.051);
   background-color: $white;
 
   &__container {
@@ -15,6 +15,7 @@
     @include flexSpaceBetween;
     align-items: center;
     width: 100%;
+    position: relative;
   }
 
   &--logo {
@@ -34,15 +35,123 @@
       @include flexAlignCenter;
       gap: 25px;
 
+      &:hover {
+        .header__main-menu__list__sub-menu {
+          visibility: visible;
+          transform: translateY(0px);
+          transition-duration: 0.3s;
+        }
+      }
+
+      &__sub-menu {
+        visibility: hidden;
+        display: none;
+        @include mediaQuery($device-lg) {
+          visibility: hidden;
+          transform: translateY(-20px);
+          transition-duration: 0.3s;
+          @include flex;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.051);
+          position: absolute;
+          top: 72px;
+          z-index: 2;
+          background-color: $white;
+          width: 100%;
+          justify-content: flex-start;
+          padding: 56px 54px;
+          left: 20;
+          border: 1px solid $light-gray;
+          border-top: 0;
+          border-bottom-left-radius: 18px;
+          border-bottom-right-radius: 18px;
+          max-width: 1146px;
+        }
+
+        &__list {
+          @include mediaQuery($device-lg) {
+            @include flex;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 15px;
+            border-right: 1px solid $border-gray;
+            padding-right: 45px;
+          }
+
+          &__item {
+            @include mediaQuery($device-lg) {
+              @include flex;
+              justify-content: flex-start;
+              @include flexAlignCenter;
+              @include fontSize(14px, 25px);
+              font-weight: 400;
+              color: $black;
+              padding: 0px 16px;
+              opacity: 0.5;
+              cursor: pointer;
+
+              &--active {
+                width: 100%;
+                background-color: $primary-color;
+                border-radius: 5px;
+                height: 38px;
+                font-weight: 500;
+                color: $white;
+                opacity: 1;
+              }
+            }
+          }
+        }
+
+        &__right {
+          @include mediaQuery($device-lg) {
+            padding-left: 45px;
+          }
+
+          &--heading {
+            @include mediaQuery($device-lg) {
+              @include fontSize(14px, 25px);
+              font-weight: 600;
+              color: $primary-color;
+              @include flex;
+              @include flexAlignCenter;
+              gap: 10px;
+              padding-bottom: 36px;
+              margin: 0;
+
+              &::after {
+                content: "";
+                background: $primary-color;
+                opacity: 0.3;
+                height: 1px;
+                width: 100%;
+              }
+            }
+          }
+
+          &__item {
+            @include mediaQuery($device-lg) {
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              row-gap: 30px;
+            }
+
+            &--link {
+              @include mediaQuery($device-lg) {
+                a {
+                  text-decoration: none;
+                  cursor: pointer;
+                  @include fontSize(14px, 25px);
+                  font-weight: 400;
+                }
+              }
+            }
+          }
+        }
+      }
+
       &--item {
         @include flex;
         @include flexAlignCenter;
-        @include fontSize(13px, 52px);
-        font-weight: 500;
-        cursor: pointer;
-        &:hover {
-          color: $primary-color;
-        }
 
         .icon-drp {
           padding-left: 7px;
@@ -51,7 +160,13 @@
       }
 
       &--link {
+        @include fontSize(13px, 52px);
+        font-weight: 500;
         text-decoration: none;
+        &:hover {
+          cursor: pointer;
+          color: $primary-color;
+        }
       }
     }
   }
@@ -80,8 +195,6 @@
         background-color: $white;
         color: $primary-color;
       }
-
-      
     }
 
     &__btn {
@@ -106,12 +219,16 @@
       @include flex;
       @include flexJustifyContentCenter;
       @include flexAlignCenter;
-      height: 40px;
-      width: 40px;
-      border-radius: none;
-      
+      height: 30px;
+      width: 30px;
+      border-radius: 3px;
+      background: $white;
+      box-shadow: 0 4px 33px rgba(0,0,0,.09);
+
       @include mediaQuery($device-lg) {
         background: $light-gray;
+        height: 40px;
+        width: 40px;
         border-radius: 50%;
       }
 

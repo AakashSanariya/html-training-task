@@ -194,17 +194,17 @@
   }
 
   &__copy-right {
+    @include flex;
+    @include flexJustifyContentCenter;
+    border-top: 1px solid $lighter-gray;
+    
     &__inner {
-      justify-content: center;
-
+      @include flexJustifyContentCenter;
       @include mediaQuery($device-lg) {
         flex-direction: column;
         padding: 0;
       }
     }
-    @include flex;
-    @include flexJustifyContentCenter;
-    border-top: 1px solid $lighter-gray;
 
     &__links {
       display: none;

@@ -56,11 +56,13 @@
         font-weight: 600;
         color: $white;
         opacity: 1;
+        padding: 20px;
+        text-align: center;
+        
 
         @include mediaQuery($device-lg) {
           @include fontSize(52px, 70px);
           opacity: 1;
-          padding: 20px;
         }
       }
 
