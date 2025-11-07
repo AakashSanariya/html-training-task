@@ -511,8 +511,13 @@ ul, li {
 
 .banner-section {
   max-width: none;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   padding: 0;
+}
+@media (min-width: 767px) {
+  .banner-section {
+    margin-bottom: 100px;
+  }
 }
 .banner-section__inner {
   width: 100%;
@@ -547,7 +552,12 @@ ul, li {
 }
 
 .service-section {
-  margin-bottom: 100px;
+  margin-bottom: 50px;
+}
+@media (min-width: 767px) {
+  .service-section {
+    padding: 0 50px;
+  }
 }
 @media (min-width: 1200px) {
   .service-section {
@@ -560,6 +570,13 @@ ul, li {
   padding: 0;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+}
+@media (min-width: 767px) {
+  .service-section__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
 }
 @media (min-width: 1200px) {
   .service-section__list {
@@ -573,9 +590,8 @@ ul, li {
   justify-content: center;
   align-items: center;
   position: relative;
-  height: 280px;
+  height: 100%;
   width: 100%;
-  margin-bottom: 20px;
   background-color: #000000;
   cursor: pointer;
   z-index: 1;
@@ -592,7 +608,7 @@ ul, li {
   position: absolute;
   -o-object-fit: cover;
      object-fit: cover;
-  height: 280px;
+  height: 100%;
   width: 100%;
   border-radius: 20px;
 }
@@ -654,8 +670,15 @@ ul, li {
 .our-client {
   flex-direction: column;
   align-items: center;
-  gap: 70px;
+  gap: 40px;
   margin-bottom: 50px;
+}
+@media (min-width: 767px) {
+  .our-client {
+    flex-direction: row;
+    justify-content: center;
+    gap: 0;
+  }
 }
 .our-client__item {
   display: flex;
@@ -677,9 +700,22 @@ ul, li {
   font-weight: 400;
   color: #4E5158;
 }
+@media (min-width: 767px) {
+  .our-client__item:first-child {
+    padding-right: 20px;
+  }
+}
 .our-client__item:last-child {
   border-top: 2px solid #d9d9d9;
-  padding-top: 70px;
+  padding-top: 40px;
+}
+@media (min-width: 767px) {
+  .our-client__item:last-child {
+    border-top: 0;
+    border-left: 2px solid #d9d9d9;
+    padding-top: 0;
+    padding-left: 20px;
+  }
 }
 @media (min-width: 1200px) {
   .our-client {
@@ -689,7 +725,7 @@ ul, li {
   }
   .our-client__item:last-child {
     border-left: 2px solid #EBEBEB;
-    padding-left: 70px;
+    padding-left: 20px;
     border-top: none;
     padding-top: 0;
   }
@@ -909,7 +945,7 @@ ul, li {
   gap: 15px;
   flex-direction: column;
 }
-@media (min-width: 1200px) {
+@media (min-width: 767px) {
   .lets-talk__inner__right__card__body__row {
     flex-direction: row;
   }
