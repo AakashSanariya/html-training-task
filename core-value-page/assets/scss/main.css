@@ -581,7 +581,7 @@ ul, li {
   flex-wrap: wrap;
   gap: 20px;
 }
-.service-section__list__item {
+.service-section__item {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -594,13 +594,25 @@ ul, li {
   flex: none;
 }
 @media (min-width: 767px) {
-  .service-section__list__item {
+  .service-section__item {
     height: 280px;
     background-color: #000000;
     flex: 1 1 33.33%;
   }
 }
-.service-section__list__item--bg-img {
+.service-section__item:hover .service-section__sub-item {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0px);
+  transition-duration: 0.3s;
+}
+.service-section__item:hover .service-section__heading-txt {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(0px);
+  transition: 0.3s;
+}
+.service-section__bg-img {
   opacity: 0.4;
   position: absolute;
   -o-object-fit: cover;
@@ -609,7 +621,7 @@ ul, li {
   width: 100%;
   border-radius: 20px;
 }
-.service-section__list__item--heading-txt {
+.service-section__heading-txt {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -622,13 +634,13 @@ ul, li {
   text-align: center;
 }
 @media (min-width: 1200px) {
-  .service-section__list__item--heading-txt {
+  .service-section__heading-txt {
     font-size: 52px;
     line-height: 70px;
     opacity: 1;
   }
 }
-.service-section__list__item__sub-item {
+.service-section__sub-item {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
@@ -640,7 +652,7 @@ ul, li {
   padding: 16px;
   gap: 20px;
 }
-.service-section__list__item__sub-item--sub-heading-txt {
+.service-section__sub-item--sub-heading-txt {
   color: #ffffff;
   font-size: 26px;
   line-height: 36px;
@@ -648,20 +660,8 @@ ul, li {
   justify-content: flex-start;
   margin-bottom: 0;
 }
-.service-section__list__item__sub-item--description {
+.service-section__sub-item--description {
   color: #ffffff;
-}
-.service-section__list__item:hover .service-section__list__item__sub-item {
-  visibility: visible;
-  opacity: 1;
-  transform: translateY(0px);
-  transition-duration: 0.3s;
-}
-.service-section__list__item:hover .service-section__list__item--heading-txt {
-  visibility: hidden;
-  opacity: 0;
-  transform: translateY(0px);
-  transition: 0.3s;
 }
 
 .our-client {

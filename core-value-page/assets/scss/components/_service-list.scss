@@ -21,91 +21,90 @@
     @include flexJustifyContentCenter;
     flex-wrap: wrap;
     gap: 20px;
+  }
 
+  &__item {
+    @include flex;
+    @include flexJustifyContentCenter;
+    @include flexAlignCenter;
+    position: relative;
+    width: 100%;
+    background-color: $black;
+    cursor: pointer;
+    z-index: 1;
+    border-radius: 20px;
+    flex: none;
 
-    &__item {
-      @include flex;
-      @include flexJustifyContentCenter;
-      @include flexAlignCenter;
-      position: relative;
-      width: 100%;
+    @include mediaQuery($device-md) {
+      height: 280px;
       background-color: $black;
-      cursor: pointer;
-      z-index: 1;
-      border-radius: 20px;
-      flex: none;
-      
-      @include mediaQuery($device-md) {
-        height: 280px;
-        background-color: $black;
-        flex: 1 1 33.33%;
-      }
+      flex: 1 1 33.33%;
+    }
 
-      &--bg-img {
-        opacity: 0.4;
-        position: absolute;
-        object-fit: cover;
-        height: 100%;
-        width: 100%;
-        border-radius: 20px;
-      }
-
-      &--heading-txt {
-        position: absolute;
-        @include flex;
-        @include flexJustifyContentCenter;
-        @include fontSize(32px, 38px);
-        font-weight: 600;
-        color: $white;
+    &:hover {
+      .service-section__sub-item {
+        visibility: visible;
         opacity: 1;
-        padding: 20px;
-        text-align: center;
-        
-
-        @include mediaQuery($device-lg) {
-          @include fontSize(52px, 70px);
-          opacity: 1;
-        }
+        transform: translateY(0px);
+        transition-duration: 0.3s;
       }
-
-      &__sub-item {
-        @include flex;
-        justify-content: flex-start;
-        flex-direction: column;
-        z-index: 1;
+      .service-section__heading-txt {
         visibility: hidden;
         opacity: 0;
-        transform: translateY(20px);
-        transition-duration: 0.3s;
-        padding: 16px;
-        gap: 20px;
-
-        &--sub-heading-txt {
-          color: $white;
-          @include fontSize(26px, 36px);
-          font-weight: 600;
-          justify-content: flex-start;
-          margin-bottom: 0;
-        }
-
-        &--description {
-          color: $white;
-        }
+        transform: translateY(0px);
+        transition: 0.3s;
       }
-      &:hover {
-        .service-section__list__item__sub-item {
-          visibility: visible;
-          opacity: 1;
-          transform: translateY(0px);
-          transition-duration: 0.3s;
-        }
-        .service-section__list__item--heading-txt {
-          visibility: hidden;
-          opacity: 0;
-          transform: translateY(0px);
-          transition: 0.3s;
-        }
-      }
+    }
+  }
+
+  &__bg-img {
+    opacity: 0.4;
+    position: absolute;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+  }
+
+  &__heading-txt {
+    position: absolute;
+    @include flex;
+    @include flexJustifyContentCenter;
+    @include fontSize(32px, 38px);
+    font-weight: 600;
+    color: $white;
+    opacity: 1;
+    padding: 20px;
+    text-align: center;
+
+    @include mediaQuery($device-lg) {
+      @include fontSize(52px, 70px);
+      opacity: 1;
+    }
+  }
+
+  &__sub-item {
+    @include flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    z-index: 1;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    transition-duration: 0.3s;
+    padding: 16px;
+    gap: 20px;
+
+    &--sub-heading-txt {
+      color: $white;
+      @include fontSize(26px, 36px);
+      font-weight: 600;
+      justify-content: flex-start;
+      margin-bottom: 0;
+    }
+
+    &--description {
+      color: $white;
     }
   }
 }
