@@ -152,12 +152,17 @@
 
           &__item {
             @include mediaQuery($device-lg) {
-              display: grid;
-              grid-template-columns: repeat(3, 1fr);
-              row-gap: 30px;
+              @include flex;
+              justify-content: flex-start;
+              align-items: center;
+              gap: 30px;
+              flex-wrap: wrap;
+              width: 100%;
             }
 
             &--link {
+              flex: 1 1 30%;
+              max-width: 30%;
               @include mediaQuery($device-lg) {
                 a {
                   text-decoration: none;

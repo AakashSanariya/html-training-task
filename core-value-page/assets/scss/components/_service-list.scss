@@ -16,20 +16,11 @@
   &__list {
     margin: 0;
     padding: 0;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    @include flex;
+    @include flexAlignCenter;
+    @include flexJustifyContentCenter;
+    flex-wrap: wrap;
     gap: 20px;
-
-    @include mediaQuery($device-md) {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 30px;
-    }
-
-    @include mediaQuery($device-lg) {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 30px;
-    }
 
 
     &__item {
@@ -37,16 +28,17 @@
       @include flexJustifyContentCenter;
       @include flexAlignCenter;
       position: relative;
-      height: 100%;
       width: 100%;
       background-color: $black;
       cursor: pointer;
       z-index: 1;
       border-radius: 20px;
-
-      @include mediaQuery($device-lg) {
+      flex: none;
+      
+      @include mediaQuery($device-md) {
         height: 280px;
         background-color: $black;
+        flex: 1 1 33.33%;
       }
 
       &--bg-img {
