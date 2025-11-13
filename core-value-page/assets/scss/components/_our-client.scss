@@ -13,6 +13,24 @@
     gap: 0;
   }
 
+  @include mediaQuery($device-lg) {
+    flex-direction: row;
+    width: 735px;
+    height: 203px;
+  }
+
+  h4 {
+    @include fontSize(26px, 36px);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  p {
+    @include fontSize(16px, 24px);
+    font-weight: 400;
+    color: $text-gray;
+  }
+
   &__item {
     @include flex;
     @include flexAlignCenter;
@@ -20,18 +38,6 @@
     text-align: center;
     flex-direction: column;
     max-width: 335px;
-
-    &--heading-txt {
-      @include fontSize(26px, 36px);
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
-
-    &--description {
-      @include fontSize(16px, 24px);
-      font-weight: 400;
-      color: $text-gray;
-    }
 
     &:first-child {
       @include mediaQuery($device-md) {
@@ -49,20 +55,14 @@
         padding-top: 0;
         padding-left: 20px;
       }
-    }
-  }
 
-  @include mediaQuery($device-lg) {
-    flex-direction: row;
-    width: 735px;
-    height: 203px;
-    
-    &__item {
-      &:last-child {
-        border-left: 2px solid $lighter-gray;
-        padding-left: 20px;
-        border-top: none;
-        padding-top: 0;
+      @include mediaQuery($device-lg) {
+        &:last-child {
+          border-left: 2px solid $lighter-gray;
+          padding-left: 20px;
+          border-top: none;
+          padding-top: 0;
+        }
       }
     }
   }

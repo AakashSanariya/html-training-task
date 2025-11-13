@@ -33,7 +33,7 @@
         width: auto;
       }
 
-      &--heading {
+      h5 {
         @include fontSize(26px, 36px);
         font-weight: 600;
 
@@ -66,21 +66,21 @@
             gap: 8px;
           }
 
-          &--telphone {
+          span {
             position: absolute;
             color: $primary-color;
             right: 8px;
             top: 10px;
           }
 
-          &--heading {
+          h6 {
             @include fontSize(14px, 22px);
             font-weight: 400;
             color: $text-gray;
             margin-bottom: 0;
           }
 
-          &--mobile-no {
+          a {
             @include fontSize(14px, 22px);
             font-weight: 400;
             color: $primary-color;
@@ -91,7 +91,7 @@
             }
           }
 
-          &--country {
+          p {
             @include fontSize(14px, 21px);
             font-weight: 400;
             margin-bottom: 0;
@@ -130,7 +130,7 @@
           }
         }
 
-        &--heading {
+        h6 {
           width: 100%;
           @include fontSize(16px, 22px);
           font-weight: 500;
@@ -157,7 +157,7 @@
           justify-content: flex-start;
           flex-wrap: wrap;
 
-          &--item {
+          &__item {
             flex: 1 1 18%;
             max-width: 18%;
 
@@ -193,7 +193,7 @@
           height: 54px;
           color: $white;
 
-          &--title {
+          h6 {
             @include fontSize(18px, 24px);
             font-weight: 500;
             margin: 0;
@@ -225,7 +225,7 @@
               flex-direction: row;
             }
 
-            &--item {
+            &__item {
               width: 100%;
             }
 

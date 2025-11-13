@@ -6,39 +6,35 @@
 
     <!-- Viewport for responsiveness -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script type="text/javascript">
-      function menuClick() {
-        const nodeElement = document.getElementById("menu-item");
-        if (nodeElement.classList.contains("header__main-menu__mobile")) {
-          nodeElement.classList.remove("header__main-menu__mobile");
-        } else {
-          nodeElement.classList.add("header__main-menu__mobile");
-        }
-      }
-    </script>
+    <script
+      type="text/javascript"
+      src="./assets/js/mobile-header-menu.js"
+    ></script>
   </head>
   <body>
     <main>
       <!-- Header Section -->
       <header class="header">
         <div class="container header__container">
-          <div class="header--logo">
+          <picture class="header__logo">
+            <source srcset="assets/images/brainvire-logo.svg" />
             <img
               height="32"
               width="144"
               src="assets/images/brainvire-logo.svg"
               alt="Logo"
+              title="Logo"
             />
-          </div>
+          </picture>
           <!-- For Mobile screen Toggle a this class: header__main-menu__mobile -->
           <nav class="header__main-menu" id="menu-item">
             <ul class="header__main-menu__list">
-              <li class="header__main-menu__list--item">
+              <li class="header__main-menu__list__item">
                 <a href="#" class="header__main-menu__list--link"
                   >Services <span class="icon-drp"></span
                 ></a>
                 <!-- This Span Tag only add for mobile -->
-                <span class="header__main-menu__list--item icon-drp"></span>
+                <span class="header__main-menu__list__item icon-drp"></span>
                 <div class="header__main-menu__list__sub-menu">
                   <div>
                     <ul class="header__main-menu__list__sub-menu__list">
@@ -83,7 +79,9 @@
                       >
                         Ecommerce
                       </h2>
-                      <ul class="header__main-menu__list__sub-menu__right__item">
+                      <ul
+                        class="header__main-menu__list__sub-menu__right__item"
+                      >
                         <li
                           class="header__main-menu__list__sub-menu__right__item--link"
                         >
@@ -125,37 +123,43 @@
                           <a href="#">Mobile Commerce</a>
                         </li>
                       </ul>
-
                     </div>
-                    <div class="header__main-menu__list__sub-menu__right--search">
-                      <input type="text" class="form-control form-control__input" placeholder="Type here what you're looking for" name="Search" />
+                    <div
+                      class="header__main-menu__list__sub-menu__right--search"
+                    >
+                      <input
+                        type="text"
+                        class="form-control form-control__input"
+                        placeholder="Type here what you're looking for"
+                        name="Search"
+                      />
                       <span class="icon-search" />
                     </div>
                   </div>
                 </div>
               </li>
-              <li class="header__main-menu__list--item">
+              <li class="header__main-menu__list__item">
                 <a href="#" class="header__main-menu__list--link"
                   >Industries <span class="icon-drp"></span
                 ></a>
                 <!-- This Span Tag only add for mobile -->
-                <span class="header__main-menu__list--item icon-drp"></span>
+                <span class="header__main-menu__list__item icon-drp"></span>
               </li>
-              <li class="header__main-menu__list--item">
+              <li class="header__main-menu__list__item">
                 <a href="#" class="header__main-menu__list--link">Products</a>
               </li>
-              <li class="header__main-menu__list--item">
+              <li class="header__main-menu__list__item">
                 <a href="#" class="header__main-menu__list--link">Portfolio</a>
               </li>
-              <li class="header__main-menu__list--item">
+              <li class="header__main-menu__list__item">
                 <a href="#" class="header__main-menu__list--link">Case Study</a>
               </li>
-              <li class="header__main-menu__list--item">
+              <li class="header__main-menu__list__item">
                 <a href="#" class="header__main-menu__list--link"
                   >Company <span class="icon-drp"></span
                 ></a>
                 <!-- This Span Tag only add for mobile -->
-                <span class="header__main-menu__list--item icon-drp"></span>
+                <span class="header__main-menu__list__item icon-drp"></span>
               </li>
             </ul>
           </nav>
@@ -172,31 +176,30 @@
       </header>
 
       <!-- Banner Section -->
-      <section class="banner-section container">
+      <section class="banner-section container-fluid">
         <div class="banner-section__inner">
-          <h1 class="banner-section__inner--heading">Our Core Value</h1>
+          <h1>Our Core Value</h1>
         </div>
       </section>
 
       <!-- Service Section -->
-      <section class="service-section container">
+      <section class="service-section container-fluid">
         <ul class="service-section__list">
-          <li class="service-section__item">
-            <img
-              alt="Innovation"
-              height="280"
-              width="585"
-              class="service-section__bg-img"
-              src="assets/images/service-section/Innovation.jpg"
-            />
-            <h2 class="service-section__heading-txt">Innovation</h2>
-            <div class="service-section__sub-item">
-              <h3
-                class="service-section__sub-item--sub-heading-txt"
-              >
-                Innovation
-              </h3>
-              <p class="service-section__sub-item--description">
+          <li class="service-section__list__item">
+            <picture>
+              <source srcset="assets/images/service-section/Innovation.jpg" />
+              <img
+                alt="Innovation"
+                height="280"
+                width="585"
+                title="Innovation"
+                src="assets/images/service-section/Innovation.jpg"
+              />
+            </picture>
+            <h2>Innovation</h2>
+            <div class="service-section__list__item__sub-item">
+              <h3>Innovation</h3>
+              <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
                 text ever since the 1500s, when an unknown printer took a galley
@@ -204,23 +207,22 @@
               </p>
             </div>
           </li>
-          <li class="service-section__item">
-            <img
-              alt="Integrity"
-              height="280"
-              width="585"
-              class="service-section__bg-img"
-              src="assets/images/service-section/Integrity.jpg"
-            />
+          <li class="service-section__list__item">
+            <picture>
+              <source srcset="assets/images/service-section/Integrity.jpg" />
+              <img
+                alt="Integrity"
+                height="280"
+                width="585"
+                title="Integrity"
+                src="assets/images/service-section/Integrity.jpg"
+              />
+            </picture>
             <h2 class="service-section__heading-txt">Integrity</h2>
-            <div class="service-section__sub-item">
-              <h3
-                class="service-section__sub-item--sub-heading-txt"
-              >
-                Integrity
-              </h3>
+            <div class="service-section__list__item__sub-item">
+              <h3>Integrity</h3>
 
-              <p class="service-section__sub-item--description">
+              <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
                 text ever since the 1500s, when an unknown printer took a galley
@@ -228,24 +230,23 @@
               </p>
             </div>
           </li>
-          <li class="service-section__item">
-            <img
-              alt="Customer Centricity"
-              height="280"
-              width="585"
-              class="service-section__bg-img"
-              src="assets/images/service-section/Customer Focus.jpg"
-            />
-            <h2 class="service-section__heading-txt">
-              Customer - Centricity
-            </h2>
-            <div class="service-section__sub-item">
-              <h3
-                class="service-section__sub-item--sub-heading-txt"
-              >
-                Customer Centricity
-              </h3>
-              <p class="service-section__sub-item--description">
+          <li class="service-section__list__item">
+            <picture>
+              <source
+                srcset="assets/images/service-section/Customer Focus.jpg"
+              />
+              <img
+                alt="Customer Centricity"
+                height="280"
+                width="585"
+                title="Customer Centricity"
+                src="assets/images/service-section/Customer Focus.jpg"
+              />
+            </picture>
+            <h2 class="service-section__heading-txt">Customer - Centricity</h2>
+            <div class="service-section__list__item__sub-item">
+              <h3>Customer Centricity</h3>
+              <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
                 text ever since the 1500s, when an unknown printer took a galley
@@ -253,23 +254,22 @@
               </p>
             </div>
           </li>
-          <li class="service-section__item">
-            <img
-              alt="Excellence"
-              height="280"
-              width="585"
-              class="service-section__bg-img"
-              src="assets/images/service-section/Excellence.jpg"
-            />
+          <li class="service-section__list__item">
+            <picture>
+              <source srcset="assets/images/service-section/Excellence.jpg" />
+              <img
+                alt="Excellence"
+                height="280"
+                width="585"
+                title="Excellence"
+                src="assets/images/service-section/Excellence.jpg"
+              />
+            </picture>
             <h2 class="service-section__heading-txt">Excellence</h2>
-            <div class="service-section__sub-item">
-              <h3
-                class="service-section__sub-item--sub-heading-txt"
-              >
-                Excellence
-              </h3>
+            <div class="service-section__list__item__sub-item">
+              <h3>Excellence</h3>
 
-              <p class="service-section__sub-item--description">
+              <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
                 text ever since the 1500s, when an unknown printer took a galley
@@ -277,24 +277,21 @@
               </p>
             </div>
           </li>
-          <li class="service-section__item">
-            <img
-              alt="Adaptability"
-              height="280"
-              width="585"
-              class="service-section__bg-img"
-              src="assets/images/service-section/Adaptability.jpg"
-            />
-            <h2 class="service-section__heading-txt">
-              Adaptability
-            </h2>
-            <div class="service-section__sub-item">
-              <h3
-                class="service-section__sub-item--sub-heading-txt"
-              >
-                Adaptability
-              </h3>
-              <p class="service-section__sub-item--description">
+          <li class="service-section__list__item">
+            <picture>
+              <source srcset="assets/images/service-section/Adaptability.jpg" />
+              <img
+                alt="Adaptability"
+                height="280"
+                width="585"
+                title="Adaptability"
+                src="assets/images/service-section/Adaptability.jpg"
+              />
+            </picture>
+            <h2 class="service-section__heading-txt">Adaptability</h2>
+            <div class="service-section__list__item__sub-item">
+              <h3>Adaptability</h3>
+              <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
                 text ever since the 1500s, when an unknown printer took a galley
@@ -302,25 +299,24 @@
               </p>
             </div>
           </li>
-          <li class="service-section__item">
-            <img
-              alt="Collaboration"
-              height="280"
-              width="585"
-              class="service-section__bg-img"
-              src="assets/images/service-section/Collaboration.jpg"
-            />
-            <h2 class="service-section__heading-txt">
-              Collaboration
-            </h2>
-            <div class="service-section__sub-item">
-              <h3
-                class="service-section__sub-item--sub-heading-txt"
-              >
-                Collaboration
-              </h3>
+          <li class="service-section__list__item">
+            <picture>
+              <source
+                srcset="assets/images/service-section/Collaboration.jpg"
+              />
+              <img
+                alt="Collaboration"
+                height="280"
+                width="585"
+                title="Collaboration"
+                src="assets/images/service-section/Collaboration.jpg"
+              />
+            </picture>
+            <h2 class="service-section__heading-txt">Collaboration</h2>
+            <div class="service-section__list__item__sub-item">
+              <h3>Collaboration</h3>
 
-              <p class="service-section__sub-item--description">
+              <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
                 text ever since the 1500s, when an unknown printer took a galley
@@ -328,25 +324,22 @@
               </p>
             </div>
           </li>
-          <li class="service-section__item">
-            <img
-              alt="Empowerment"
-              height="280"
-              width="585"
-              class="service-section__bg-img"
-              src="assets/images/service-section/Empowerment.jpg"
-            />
-            <h2 class="service-section__heading-txt">
-              Empowerment
-            </h2>
-            <div class="service-section__sub-item">
-              <h3
-                class="service-section__sub-item--sub-heading-txt"
-              >
-                Empowerment
-              </h3>
+          <li class="service-section__list__item">
+            <picture>
+              <source srcset="assets/images/service-section/Empowerment.jpg" />
+              <img
+                alt="Empowerment"
+                height="280"
+                width="585"
+                title="Empowerment"
+                src="assets/images/service-section/Empowerment.jpg"
+              />
+            </picture>
+            <h2 class="service-section__heading-txt">Empowerment</h2>
+            <div class="service-section__list__item__sub-item">
+              <h3>Empowerment</h3>
 
-              <p class="service-section__sub-item--description">
+              <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
                 text ever since the 1500s, when an unknown printer took a galley
@@ -354,24 +347,23 @@
               </p>
             </div>
           </li>
-          <li class="service-section__item">
-            <img
-              alt="Sustainability"
-              height="280"
-              width="585"
-              class="service-section__bg-img"
-              src="assets/images/service-section/Sustainability.jpg"
-            />
-            <h2 class="service-section__heading-txt">
-              Sustainability
-            </h2>
-            <div class="service-section__sub-item">
-              <h3
-                class="service-section__sub-item--sub-heading-txt"
-              >
-                Sustainability
-              </h3>
-              <p class="service-section__sub-item--description">
+          <li class="service-section__list__item">
+            <picture>
+              <source
+                srcset="assets/images/service-section/Sustainability.jpg"
+              />
+              <img
+                alt="Sustainability"
+                height="280"
+                width="585"
+                title="Sustainability"
+                src="assets/images/service-section/Sustainability.jpg"
+              />
+            </picture>
+            <h2 class="service-section__heading-txt">Sustainability</h2>
+            <div class="service-section__list__item__sub-item">
+              <h3>Sustainability</h3>
+              <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
                 text ever since the 1500s, when an unknown printer took a galley
@@ -385,16 +377,16 @@
       <!-- Our Client -->
       <section class="our-client container">
         <div class="our-client__item">
-          <h4 class="our-client__heading-txt">Our Clients</h4>
-          <p class="our-client__item--description">
+          <h4>Our Clients</h4>
+          <p>
             Take a look at our portfolio where we help global clients achieve
             digital transformation
           </p>
           <button class="btn btn--primary">Learn More</button>
         </div>
         <div class="our-client__item">
-          <h4 class="our-client__heading-txt">Our Leadership</h4>
-          <p class="our-client__item--description">
+          <h4>Our Leadership</h4>
+          <p>
             Meet our team of experts who deliver world-class solutions with
             their vast industry expertise
           </p>
@@ -403,262 +395,306 @@
       </section>
 
       <!-- Let's Talk -->
-      <section class="lets-talk container">
-        <div class="lets-talk__inner">
-          <div class="lets-talk__inner__left">
-            <h5 class="lets-talk__inner__left--heading">
-              Let's talk about your project
-            </h5>
-            <ul class="lets-talk__inner__left__contact-list">
-              <li class="lets-talk__inner__left__contact-list__item">
-                <span
-                  class="lets-talk__inner__left__contact-list__item--telphone icon-telphone"
-                ></span>
-                <h6 class="lets-talk__inner__left__contact-list__item--heading">
-                  General inquiries
-                </h6>
-                <a
-                  href="tel:+44 000 000 0000"
-                  class="lets-talk__inner__left__contact-list__item--mobile-no"
-                  >+44 000 000 0000</a
-                >
-                <p class="lets-talk__inner__left__contact-list__item--country">
-                  United Kingdom
-                </p>
-              </li>
-              <li href="" class="lets-talk__inner__left__contact-list__item">
-                <span
-                  class="lets-talk__inner__left__contact-list__item--telphone icon-telphone"
-                ></span>
-                <h6 class="lets-talk__inner__left__contact-list__item--heading">
-                  Sales inquiries
-                </h6>
-                <a
-                  href="tel:+44 000 000 0000"
-                  class="lets-talk__inner__left__contact-list__item--mobile-no"
-                  >+44 000 000 0000</a
-                >
-                <p class="lets-talk__inner__left__contact-list__item--country">
-                  United States
-                </p>
-              </li>
-            </ul>
-            <div
-              class="lets-talk__inner__left__company lets-talk__inner__left__company--desktop"
-            >
-              <h6 class="lets-talk__inner__left__company--heading">
-                Our Partners
-              </h6>
+      <section class="lets-talk">
+        <div class="container-fluid">
+          <div class="lets-talk__inner">
+            <div class="lets-talk__inner__left">
+              <h5>Let's talk about your project</h5>
+              <ul class="lets-talk__inner__left__contact-list">
+                <li class="lets-talk__inner__left__contact-list__item">
+                  <span class="icon-telphone"></span>
+                  <h6>General inquiries</h6>
+                  <a href="tel:+44 000 000 0000">+44 000 000 0000</a>
+                  <p>United Kingdom</p>
+                </li>
+                <li href="" class="lets-talk__inner__left__contact-list__item">
+                  <span class="icon-telphone"></span>
+                  <h6>Sales inquiries</h6>
+                  <a href="tel:+44 000 000 0000">+44 000 000 0000</a>
+                  <p>United States</p>
+                </li>
+              </ul>
+              <div
+                class="lets-talk__inner__left__company lets-talk__inner__left__company--desktop"
+              >
+                <h6>Our Partners</h6>
+                <ul class="lets-talk__inner__left__company__list">
+                  <li class="lets-talk__inner__left__company__list__item">
+                    <picture>
+                      <source
+                        srcset="assets/images/company-logo/image 24.png"
+                      />
+                      <img
+                        height="26"
+                        width="86"
+                        src="assets/images/company-logo/image 24.png"
+                        alt="logo-1"
+                        title="logo-1"
+                      />
+                    </picture>
+                  </li>
+                  <li class="lets-talk__inner__left__company__list__item">
+                    <picture>
+                      <source
+                        srcset="assets/images/company-logo/image 25.png"
+                      />
+                      <img
+                        height="26"
+                        width="86"
+                        src="assets/images/company-logo/image 25.png"
+                        alt="logo-2"
+                        title="logo-2"
+                      />
+                    </picture>
+                  </li>
+                  <li class="lets-talk__inner__left__company__list__item">
+                    <picture>
+                      <source
+                        srcset="assets/images/company-logo/image 26.png"
+                      />
+                      <img
+                        height="26"
+                        width="86"
+                        src="assets/images/company-logo/image 26.png"
+                        alt="logo-3"
+                        title="logo-3"
+                      />
+                    </picture>
+                  </li>
+                  <li class="lets-talk__inner__left__company__list__item">
+                    <picture>
+                      <source
+                        srcset="assets/images/company-logo/image 28.png"
+                      />
+                      <img
+                        height="26"
+                        width="86"
+                        src="assets/images/company-logo/image 28.png"
+                        alt="logo-4"
+                        title="logo-4"
+                      />
+                    </picture>
+                  </li>
+                  <li class="lets-talk__inner__left__company__list__item">
+                    <picture>
+                      <source
+                        srcset="assets/images/company-logo/image 30.png"
+                      />
+                      <img
+                        height="26"
+                        width="86"
+                        src="assets/images/company-logo/image 30.png"
+                        alt="logo-5"
+                        title="logo-5"
+                      />
+                    </picture>
+                  </li>
+                  <li class="lets-talk__inner__left__company__list__item">
+                    <picture>
+                      <source
+                        srcset="assets/images/company-logo/Coupon-Chief-1 1.png"
+                      />
+                      <img
+                        height="26"
+                        width="86"
+                        src="assets/images/company-logo/Coupon-Chief-1 1.png"
+                        alt="logo-6"
+                        title="logo-6"
+                      />
+                    </picture>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="lets-talk__inner__left__company">
+              <h6>Our Partners</h6>
               <ul class="lets-talk__inner__left__company__list">
-                <li class="lets-talk__inner__left__company__list--item">
-                  <img
-                    height="26"
-                    width="86"
-                    src="assets/images/company-logo/image 24.png"
-                    alt="logo-1"
-                  />
+                <li class="lets-talk__inner__left__company__list__item">
+                  <picture>
+                    <source srcset="assets/images/company-logo/image 24.png" />
+                    <img
+                      height="26"
+                      width="86"
+                      src="assets/images/company-logo/image 24.png"
+                      alt="logo-1"
+                      title="logo-1"
+                    />
+                  </picture>
                 </li>
-                <li class="lets-talk__inner__left__company__list--item">
-                  <img
-                    height="26"
-                    width="86"
-                    src="assets/images/company-logo/image 25.png"
-                    alt="logo-2"
-                  />
+                <li class="lets-talk__inner__left__company__list__item">
+                  <picture>
+                    <source srcset="assets/images/company-logo/image 25.png" />
+                    <img
+                      height="26"
+                      width="86"
+                      src="assets/images/company-logo/image 25.png"
+                      alt="logo-2"
+                      title="logo-2"
+                    />
+                  </picture>
                 </li>
-                <li class="lets-talk__inner__left__company__list--item">
-                  <img
-                    height="26"
-                    width="86"
-                    src="assets/images/company-logo/image 26.png"
-                    alt="logo-3"
-                  />
+                <li class="lets-talk__inner__left__company__list__item">
+                  <picture>
+                    <source srcset="assets/images/company-logo/image 26.png" />
+                    <img
+                      height="26"
+                      width="86"
+                      src="assets/images/company-logo/image 26.png"
+                      alt="logo-3"
+                      title="logo-3"
+                    />
+                  </picture>
                 </li>
-                <li class="lets-talk__inner__left__company__list--item">
-                  <img
-                    height="26"
-                    width="86"
-                    src="assets/images/company-logo/image 28.png"
-                    alt="logo-4"
-                  />
+                <li class="lets-talk__inner__left__company__list__item">
+                  <picture>
+                    <source srcset="assets/images/company-logo/image 28.png" />
+                    <img
+                      height="26"
+                      width="86"
+                      src="assets/images/company-logo/image 28.png"
+                      alt="logo-4"
+                      title="logo-4"
+                    />
+                  </picture>
                 </li>
-                <li class="lets-talk__inner__left__company__list--item">
-                  <img
-                    height="26"
-                    width="86"
-                    src="assets/images/company-logo/image 30.png"
-                    alt="logo-5"
-                  />
+                <li class="lets-talk__inner__left__company__list__item">
+                  <picture>
+                    <source srcset="assets/images/company-logo/image 30.png" />
+                    <img
+                      height="26"
+                      width="86"
+                      src="assets/images/company-logo/image 30.png"
+                      alt="logo-5"
+                      title="logo-5"
+                    />
+                  </picture>
                 </li>
-                <li class="lets-talk__inner__left__company__list--item">
-                  <img
-                    height="26"
-                    width="86"
-                    src="assets/images/company-logo/Coupon-Chief-1 1.png"
-                    alt="logo-6"
-                  />
+                <li class="lets-talk__inner__left__company__list__item">
+                  <picture>
+                    <source
+                      srcset="assets/images/company-logo/Coupon-Chief-1 1.png"
+                    />
+                    <img
+                      height="26"
+                      width="86"
+                      src="assets/images/company-logo/Coupon-Chief-1 1.png"
+                      alt="logo-6"
+                      title="logo-6"
+                    />
+                  </picture>
                 </li>
               </ul>
             </div>
-          </div>
-          <div class="lets-talk__inner__left__company">
-            <h6 class="lets-talk__inner__left__company--heading">
-              Our Partners
-            </h6>
-            <ul class="lets-talk__inner__left__company__list">
-              <li class="lets-talk__inner__left__company__list--item">
-                <img
-                  height="26"
-                  width="86"
-                  src="assets/images/company-logo/image 24.png"
-                  alt="logo-1"
-                />
-              </li>
-              <li class="lets-talk__inner__left__company__list--item">
-                <img
-                  height="26"
-                  width="86"
-                  src="assets/images/company-logo/image 25.png"
-                  alt="logo-2"
-                />
-              </li>
-              <li class="lets-talk__inner__left__company__list--item">
-                <img
-                  height="26"
-                  width="86"
-                  src="assets/images/company-logo/image 26.png"
-                  alt="logo-3"
-                />
-              </li>
-              <li class="lets-talk__inner__left__company__list--item">
-                <img
-                  height="26"
-                  width="86"
-                  src="assets/images/company-logo/image 28.png"
-                  alt="logo-4"
-                />
-              </li>
-              <li class="lets-talk__inner__left__company__list--item">
-                <img
-                  height="26"
-                  width="86"
-                  src="assets/images/company-logo/image 30.png"
-                  alt="logo-5"
-                />
-              </li>
-              <li class="lets-talk__inner__left__company__list--item">
-                <img
-                  height="26"
-                  width="86"
-                  src="assets/images/company-logo/Coupon-Chief-1 1.png"
-                  alt="logo-6"
-                />
-              </li>
-            </ul>
-          </div>
-          <div class="lets-talk__inner__right">
-            <div class="lets-talk__inner__right__card">
-              <div class="lets-talk__inner__right__card__heading">
-                <h6 class="lets-talk__inner__right__card__heading--title">
-                  Hire Our Experts
-                </h6>
-              </div>
-              <div class="lets-talk__inner__right__card__body">
-                <div class="lets-talk__inner__right__card__body__row">
-                  <div
-                    class="form-control lets-talk__inner__right__card__body__row--item"
-                  >
-                    <label class="form-control__label" for="name"
-                      >Name <span class="form-control--astrict">*</span></label
+            <div class="lets-talk__inner__right">
+              <div class="lets-talk__inner__right__card">
+                <div class="lets-talk__inner__right__card__heading">
+                  <h6>Hire Our Experts</h6>
+                </div>
+                <div class="lets-talk__inner__right__card__body">
+                  <div class="lets-talk__inner__right__card__body__row">
+                    <div
+                      class="form-control lets-talk__inner__right__card__body__row__item"
                     >
-                    <input
-                      class="form-control__input"
-                      name="name"
-                      id="name"
-                      type="text"
-                      placeholder="Name"
-                    />
+                      <label class="form-control__label" for="name"
+                        >Name
+                        <span class="form-control--astrict">*</span></label
+                      >
+                      <input
+                        class="form-control__input"
+                        name="name"
+                        id="name"
+                        type="text"
+                        placeholder="Name"
+                      />
+                    </div>
+                    <div
+                      class="form-control lets-talk__inner__right__card__body__row__item"
+                    >
+                      <label class="form-control__label" for="Phone-no"
+                        >Phone Number
+                        <span class="form-control--astrict">*</span></label
+                      >
+                      <div class="form-control__input-select">
+                        <div
+                          class="form-control__input form-control__input-select__list"
+                        >
+                          <picture>
+                            <source
+                              srcset="assets/images/country-icon/flag-india.svg"
+                            />
+                            <img
+                              alt="india"
+                              src="assets/images/country-icon/flag-india.svg"
+                              height="18"
+                              width="28"
+                            />
+                          </picture>
+                          <span class="icon-select-drp"></span>
+                        </div>
+                        <input
+                          class="form-control__input form-control__input-select--phone-no"
+                          name="phone-no"
+                          id="Phone-no"
+                          type="text"
+                          placeholder="Phone Number"
+                        />
+                      </div>
+                    </div>
                   </div>
                   <div
-                    class="form-control lets-talk__inner__right__card__body__row--item"
+                    class="lets-talk__inner__right__card__body__row lets-talk__inner__right__card__body__row--spacing"
                   >
-                    <label class="form-control__label" for="Phone-no"
-                      >Phone Number
-                      <span class="form-control--astrict">*</span></label
+                    <div
+                      class="form-control lets-talk__inner__right__card__body__row__item"
                     >
-                    <div class="form-control__input-select">
-                      <div
-                        class="form-control__input form-control__input-select__list"
+                      <label class="form-control__label" for="business-email"
+                        >Business Email
+                        <span class="form-control--astrict">*</span></label
                       >
-                        <img
-                          class=""
-                          alt="india"
-                          src="assets/images/country-icon/flag-india.svg"
-                          height="18"
-                          width="28"
-                        />
-                        <span
-                          class="icon-select-drp form-control__input-select__list--icon"
-                        ></span>
-                      </div>
                       <input
-                        class="form-control__input form-control__input-select--phone-no"
-                        name="phone-no"
-                        id="Phone-no"
+                        class="form-control__input"
+                        name="business-email"
+                        id="business-email"
                         type="text"
-                        placeholder="Phone Number"
+                        placeholder="Business Email"
                       />
                     </div>
                   </div>
-                </div>
-                <div
-                  class="lets-talk__inner__right__card__body__row lets-talk__inner__right__card__body__row--spacing"
-                >
                   <div
-                    class="form-control lets-talk__inner__right__card__body__row--item"
+                    class="lets-talk__inner__right__card__body__row lets-talk__inner__right__card__body__row--spacing"
                   >
-                    <label class="form-control__label" for="business-email"
-                      >Business Email
-                      <span class="form-control--astrict">*</span></label
+                    <div
+                      class="form-control lets-talk__inner__right__card__body__row__item"
                     >
-                    <input
-                      class="form-control__input"
-                      name="business-email"
-                      id="business-email"
-                      type="text"
-                      placeholder="Business Email"
-                    />
+                      <label
+                        class="form-control__label"
+                        for="project-description"
+                        >Project Description
+                        <span class="form-control--astrict">*</span></label
+                      >
+                      <textarea
+                        rows="10"
+                        class="form-control__text-area"
+                        name="project-description"
+                        id="project-description"
+                        type="text"
+                        placeholder="How We can Help you"
+                      ></textarea>
+                    </div>
                   </div>
-                </div>
-                <div
-                  class="lets-talk__inner__right__card__body__row lets-talk__inner__right__card__body__row--spacing"
-                >
                   <div
-                    class="form-control lets-talk__inner__right__card__body__row--item"
+                    class="lets-talk__inner__right__card__body__row lets-talk__inner__right__card__body__row--spacing"
                   >
-                    <label class="form-control__label" for="project-description"
-                      >Project Description
-                      <span class="form-control--astrict">*</span></label
+                    <div
+                      class="form-control lets-talk__inner__right__card__body__row__item"
                     >
-                    <textarea
-                      rows="10"
-                      class="form-control__text-area"
-                      name="project-description"
-                      id="project-description"
-                      type="text"
-                      placeholder="How We can Help you"
-                    ></textarea>
-                  </div>
-                </div>
-                <div
-                  class="lets-talk__inner__right__card__body__row lets-talk__inner__right__card__body__row--spacing"
-                >
-                  <div
-                    class="form-control lets-talk__inner__right__card__body__row--item"
-                  >
-                    <button class="btn btn--primary btn--full-width">
-                      Submit
-                    </button>
+                      <button
+                        class="btn btn--primary btn--full-width"
+                        title="Submit"
+                      >
+                        Submit
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -668,169 +704,165 @@
       </section>
 
       <!-- Footer Section -->
-      <footer class="footer">
-        <div class="container footer__inner">
-          <div class="footer__inner__images">
-            <div class="footer__inner__images__logo">
-              <img
-                src="assets/images/brainvire-logo.svg"
-                width="202"
-                height="44"
-                alt="brainvire logo"
-              />
+      <footer>
+        <div class="container footer">
+          <div class="footer__images">
+            <div class="footer__images__logo">
+              <picture>
+                <source srcset="assets/images/brainvire-logo.svg" />
+                <img
+                  src="assets/images/brainvire-logo.svg"
+                  width="202"
+                  height="44"
+                  alt="brainvire logo"
+                  title="Brainvire Logo"
+                />
+              </picture>
               <div
-                class="footer__inner__our-services__list__social-icon footer__inner__our-services__list__social-icon-desktop"
+                class="footer__our-services__list__social-icon footer__our-services__list__social-icon-desktop"
               >
                 <span
-                  class="icon-linkedin footer__inner__our-services__list__social-icon--item"
+                  class="icon-linkedin footer__our-services__list__social-icon--item"
                 ></span>
                 <span
-                  class="icon-twitter footer__inner__our-services__list__social-icon--item"
+                  class="icon-twitter footer__our-services__list__social-icon--item"
                 ></span>
                 <span
-                  class="icon-instagram footer__inner__our-services__list__social-icon--item"
+                  class="icon-instagram footer__our-services__list__social-icon--item"
                 ></span>
                 <span
-                  class="icon-facebook footer__inner__our-services__list__social-icon--item"
+                  class="icon-facebook footer__our-services__list__social-icon--item"
                 ></span>
                 <span
-                  class="icon-youtube footer__inner__our-services__list__social-icon--item"
+                  class="icon-youtube footer__our-services__list__social-icon--item"
                 ></span>
               </div>
             </div>
-            <div class="footer__inner__images__links">
-              <ul class="footer__inner__images__links__container">
-                <li class="footer__inner__images__links__container--item">
+            <div class="footer__links">
+              <ul class="footer__links__container">
+                <li class="footer__links__container__item">
                   <a href="#">Case Study</a>
                 </li>
-                <li class="footer__inner__images__links__container--item">
+                <li class="footer__links__container__item">
                   <a href="#">Insights</a>
                 </li>
-                <li class="footer__inner__images__links__container--item">
+                <li class="footer__links__container__item">
                   <a href="#">Newsroom</a>
                 </li>
-                <li class="footer__inner__images__links__container--item">
+                <li class="footer__links__container__item">
                   <a href="#">Career</a>
                 </li>
-                <li class="footer__inner__images__links__container--item">
+                <li class="footer__links__container__item">
                   <a href="#">Blog</a>
                 </li>
-                <li class="footer__inner__images__links__container--item">
+                <li class="footer__links__container__item">
                   <a href="#">Disclaimer</a>
                 </li>
-                <li class="footer__inner__images__links__container--item">
+                <li class="footer__links__container__item">
                   <a href="#">Locate Us</a>
                 </li>
               </ul>
             </div>
           </div>
-          <div class="footer__inner__our-services">
-            <div class="footer__inner__our-services__list">
-              <h6 class="footer__inner__our-services__list--heading">
-                Our Services
-              </h6>
-              <ul class="footer__inner__our-services__list__links">
-                <li class="footer__inner__our-services__list__links--item">
+          <div class="footer__our-services">
+            <div class="footer__our-services__list">
+              <h6 class="footer__our-services__list--heading">Our Services</h6>
+              <ul class="footer__our-services__list__links">
+                <li class="footer__our-services__list__links--item">
                   <a href="#">eCommerce Development</a>
                 </li>
-                <li class="footer__inner__our-services__list__links--item">
+                <li class="footer__our-services__list__links--item">
                   <a href="#">Cloud Automation</a>
                 </li>
-                <li class="footer__inner__our-services__list__links--item">
+                <li class="footer__our-services__list__links--item">
                   <a href="#">Mobile Strategy</a>
                 </li>
-                <li class="footer__inner__our-services__list__links--item">
+                <li class="footer__our-services__list__links--item">
                   <a href="#">Enterprise Service</a>
                 </li>
-                <li class="footer__inner__our-services__list__links--item">
+                <li class="footer__our-services__list__links--item">
                   <a href="#">Fullstack Development</a>
                 </li>
-                <li class="footer__inner__our-services__list__links--item">
+                <li class="footer__our-services__list__links--item">
                   <a href="#">Digital Marketing</a>
                 </li>
-                <li class="footer__inner__our-services__list__links--item">
+                <li class="footer__our-services__list__links--item">
                   <a href="#">Microsoft Solutions</a>
                 </li>
-                <li class="footer__inner__our-services__list__links--item">
+                <li class="footer__our-services__list__links--item">
                   <a href="#">Web Development</a>
                 </li>
               </ul>
             </div>
-            <div class="footer__inner__our-services__list">
-              <h6 class="footer__inner__our-services__list--heading">
-                Industries
-              </h6>
+            <div class="footer__our-services__list">
+              <h6 class="footer__our-services__list--heading">Industries</h6>
               <ul
-                class="footer__inner__our-services__list__links footer__inner__our-services__list__links--desktop"
+                class="footer__our-services__list__links footer__our-services__list__links--desktop"
               >
-                <li class="footer__inner__our-services__list__links--item">
+                <li class="footer__our-services__list__links--item">
                   <a href="#">Retail</a>
                 </li>
-                <li class="footer__inner__our-services__list__links--item">
+                <li class="footer__our-services__list__links--item">
                   <a href="#">Education</a>
                 </li>
-                <li class="footer__inner__our-services__list__links--item">
+                <li class="footer__our-services__list__links--item">
                   <a href="#">Automative</a>
                 </li>
-                <li class="footer__inner__our-services__list__links--item">
+                <li class="footer__our-services__list__links--item">
                   <a href="#">Diamond & Jewellery</a>
                 </li>
               </ul>
             </div>
-            <div class="footer__inner__our-services__list">
+            <div class="footer__our-services__list">
               <div>
-                <h6 class="footer__inner__our-services__list--heading">
+                <h6 class="footer__our-services__list--heading">
                   Subscribe to out Newsletter
                 </h6>
-                <p class="footer__inner__our-services__list--description">
+                <p class="footer__our-services__list--description">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Provident modi ratione quos ipsa debitis nesciunt
                 </p>
-                <div class="footer__inner__our-services__list__input">
+                <div class="footer__our-services__list__input">
                   <input
                     type="text"
-                    class="form-control form-control__input footer__inner__our-services__list__input"
+                    class="form-control form-control__input footer__our-services__list__input"
                     name="subscribe"
                     placeholder="Enter your email"
                   />
-                  <button
-                    class="footer__inner__our-services__list__input--sub-btn"
-                  >
+                  <button class="footer__our-services__list__input--sub-btn">
                     Subscribe
                   </button>
                 </div>
-                <div class="footer__inner__our-services__list__social-icon">
+                <div class="footer__our-services__list__social-icon">
                   <span
-                    class="icon-linkedin footer__inner__our-services__list__social-icon--item"
+                    class="icon-linkedin footer__our-services__list__social-icon--item"
                   ></span>
                   <span
-                    class="icon-twitter footer__inner__our-services__list__social-icon--item"
+                    class="icon-twitter footer__our-services__list__social-icon--item"
                   ></span>
                   <span
-                    class="icon-instagram footer__inner__our-services__list__social-icon--item"
+                    class="icon-instagram footer__our-services__list__social-icon--item"
                   ></span>
                   <span
-                    class="icon-facebook footer__inner__our-services__list__social-icon--item"
+                    class="icon-facebook footer__our-services__list__social-icon--item"
                   ></span>
                   <span
-                    class="icon-youtube footer__inner__our-services__list__social-icon--item"
+                    class="icon-youtube footer__our-services__list__social-icon--item"
                   ></span>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="footer__copy-right">
-          <div class="container footer__copy-right__inner">
-            <p class="footer__copy-right--cp-text">
-              Copyright © 2023 Brainvire Infotech Inc.
-            </p>
-            <ul class="footer__copy-right__links">
-              <li class="footer__copy-right__links--item">Privacy Policy</li>
-              <li class="footer__copy-right__links--item">
+        <div class="footer-copy-right">
+          <div class="container footer-copy-right__inner">
+            <p>Copyright © 2023 Brainvire Infotech Inc.</p>
+            <ul class="footer-copy-right__links">
+              <li class="footer-copy-right__links__item">Privacy Policy</li>
+              <li class="footer-copy-right__links__item">
                 Terms and Conditions
               </li>
-              <li class="footer__copy-right__links--item">Site Map</li>
+              <li class="footer-copy-right__links__item">Site Map</li>
             </ul>
           </div>
         </div>

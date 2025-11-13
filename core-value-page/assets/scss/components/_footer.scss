@@ -2,261 +2,255 @@
 @use "../common/mixin" as *;
 
 .footer {
-  &__inner {
-    display: block;
+  display: block;
+
+  &__images {
+    padding: 0 0 50px 0;
 
     @include mediaQuery($device-lg) {
-      margin-bottom: 50px;
+      @include flex;
+      @include flexSpaceBetween;
+      @include flexAlignCenter;
+      border-bottom: 1px solid $light-gray;
     }
+  }
 
-    &__images {
-      padding: 0 0 50px 0;
+  &__links {
+    display: none;
 
-      &__links {
-        display: none;
-      }
+    @include mediaQuery($device-lg) {
+      display: block;
 
-      @include mediaQuery($device-lg) {
+      &__container {
         @include flex;
         @include flexSpaceBetween;
-        @include flexAlignCenter;
-        border-bottom: 1px solid $light-gray;
+        gap: 20px;
+        position: relative;
 
-        &__links {
-          display: block;
-          &__container {
-            @include flex;
-            @include flexSpaceBetween;
-            gap: 20px;
-            position: relative;
-            &--item {
-              &::after {
-                position: absolute;
-                content: "";
-                height: 17px;
-                width: 1px;
-                background: $footer-link-color;
-                margin: 0px 10px;
-                top: 5px;
-              }
-              &:last-child {
-                border: none;
-                &::after {
-                  width: 0;
-                }
-              }
-              a {
-                text-decoration: none;
-                color: $footer-link-color;
-                @include fontSize(14px, 21px);
-                font-weight: 400;
-              }
-            }
-          }
-        }
-      }
-    }
-
-    &__our-services {
-      @include flex;
-      justify-content: flex-start;
-      flex-wrap: wrap;
-      gap: 20px;
-
-
-      @include mediaQuery($device-lg) {
-        padding-top: 50px;
-      }
-
-      &__list {
-        flex: 1;
-
-        &:last-child {
-          flex: auto;
-          @include mediaQuery($device-md) {
-            flex: 1; 
-          }
-        }
-
-        &--heading {
-          @include fontSize(20px, 26px);
-          font-weight: 500;
-          padding: 20px 0;
-          margin: 0;
-  
-          @include mediaQuery($device-lg) {
-            @include fontSize(24px, 34px);
-            padding-bottom: 20px;
-            margin: 0;
-          }
-        }
-  
-        &--description {
-          @include fontSize(14px, 22px);
-          font-weight: 400;
-          color: $text-gray;
-          padding: 20px 0;
-          margin: 0;
-        }
-  
-        &__input {
-          @include flex;
-          justify-content: flex-end;
-          @include flexAlignCenter;
-          height: 53px;
-          border-radius: 26px;
-          background-color: $input-light-bg;
-          position: relative;
-          border: none;
-          gap: 20px;
-  
-          &:focus {
-            outline: none;
-          }
-  
-          &::placeholder {
-            @include fontSize(14px, 22px);
-            font-weight: 400;
-            color: $gray-shade-three;
-          }
-  
-          &--sub-btn {
+        &__item {
+          &::after {
             position: absolute;
-            height: 44px;
-            width: 120px;
-            border-radius: 22px;
-            background-color: $primary-color;
-            color: $white;
-            @include fontSize(14px, 22px);
+            content: "";
+            height: 17px;
+            width: 1px;
+            background: $footer-link-color;
+            margin: 0px 10px;
+            top: 5px;
+          }
+          &:last-child {
+            border: none;
+            &::after {
+              width: 0;
+            }
+          }
+          a {
+            text-decoration: none;
+            color: $footer-link-color;
+            @include fontSize(14px, 21px);
             font-weight: 400;
-            cursor: pointer;
-            border: 1px solid $primary-color;
-  
-            &:hover {
-              background-color: $white;
-              color: $primary-color;
-            }
           }
         }
-  
-        &__social-icon {
-          margin-top: 20px;
-          @include flex;
-          @include flexJustifyContentCenter;
-          @include flexAlignCenter;
-          gap: 10px;
-          margin-bottom: 50px;
-  
-          &--item {
-            @include flex;
-            @include flexJustifyContentCenter;
-            @include flexAlignCenter;
-            width: 30px;
-            height: 30px;
-            background-color: $lighter-gray;
-            border-radius: 5px;
-            color: $icon-gray-color;
-          }
-  
-          @include mediaQuery($device-lg) {
-            display: none;
-          }
-        }
-  
-        &__social-icon-desktop {
-          display: none;
-  
-          @include mediaQuery($device-lg) {
-            @include flex;
-            justify-content: flex-start;
-          }
-        }
-  
-        &__links {
-
-          @include mediaQuery($device-lg) {
-            @include flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 10px;
-          }
-  
-          &--item {
-            width: 48%;
-            a {
-              text-decoration: none;
-              @include fontSize(14px, 34px);
-              font-weight: 400;
-              color: $text-gray;
-            }
-          }
-
-          &--desktop {
-            @include mediaQuery($device-lg) {
-              @include flex;
-              flex-direction: column;
-            }
-          }
-        }
-          
       }
     }
   }
 
-  &__copy-right {
+  &__our-services {
     @include flex;
-    @include flexJustifyContentCenter;
-    border-top: 1px solid $lighter-gray;
-    
-    &__inner {
-      @include flexJustifyContentCenter;
-      @include mediaQuery($device-lg) {
-        flex-direction: column;
-        padding: 0;
-      }
-    }
-
-    &__links {
-      display: none;
-    }
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
 
     @include mediaQuery($device-lg) {
-      border-top: none;
-      background-color: $lighter-gray;
-      justify-content: flex-start;
-      padding: 0 0 20px 20px;
-      flex-direction: column;
+      padding: 50px 0;
+    }
+
+    &__list {
+      flex: 1;
+
+      &:last-child {
+        flex: auto;
+        @include mediaQuery($device-md) {
+          flex: 1;
+        }
+      }
+
+      &--heading {
+        @include fontSize(20px, 26px);
+        font-weight: 500;
+        padding: 20px 0;
+        margin: 0;
+
+        @include mediaQuery($device-lg) {
+          @include fontSize(24px, 34px);
+          padding-bottom: 20px;
+          margin: 0;
+        }
+      }
+
+      &--description {
+        @include fontSize(14px, 22px);
+        font-weight: 400;
+        color: $text-gray;
+        padding: 20px 0;
+        margin: 0;
+      }
+
+      &__input {
+        @include flex;
+        justify-content: flex-end;
+        @include flexAlignCenter;
+        height: 53px;
+        border-radius: 26px;
+        background-color: $input-light-bg;
+        position: relative;
+        border: none;
+        gap: 20px;
+
+        &:focus {
+          outline: none;
+        }
+
+        &::placeholder {
+          @include fontSize(14px, 22px);
+          font-weight: 400;
+          color: $gray-shade-three;
+        }
+
+        &--sub-btn {
+          position: absolute;
+          height: 44px;
+          width: 120px;
+          border-radius: 22px;
+          background-color: $primary-color;
+          color: $white;
+          @include fontSize(14px, 22px);
+          font-weight: 400;
+          cursor: pointer;
+          border: 1px solid $primary-color;
+
+          &:hover {
+            background-color: $white;
+            color: $primary-color;
+          }
+        }
+      }
+
+      &__social-icon {
+        margin-top: 20px;
+        @include flex;
+        @include flexJustifyContentCenter;
+        @include flexAlignCenter;
+        gap: 10px;
+        margin-bottom: 50px;
+
+        &--item {
+          @include flex;
+          @include flexJustifyContentCenter;
+          @include flexAlignCenter;
+          width: 30px;
+          height: 30px;
+          background-color: $lighter-gray;
+          border-radius: 5px;
+          color: $icon-gray-color;
+        }
+
+        @include mediaQuery($device-lg) {
+          display: none;
+        }
+      }
+
+      &__social-icon-desktop {
+        display: none;
+
+        @include mediaQuery($device-lg) {
+          @include flex;
+          justify-content: flex-start;
+        }
+      }
 
       &__links {
-        @include flex;
-        justify-content: flex-start;
-        gap: 20px;
-        @include fontSize(14px, 21px);
-        font-weight: 400;
-        color: $footer-link-color;
+        @include mediaQuery($device-lg) {
+          @include flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          gap: 10px;
+        }
+
         &--item {
-          &::after {
-            content: "";
-            position: relative;
-            border-right: 1px solid $footer-link-color;
-            padding-right: 20px;
-            top: 2px;
+          width: 48%;
+          a {
+            text-decoration: none;
+            @include fontSize(14px, 34px);
+            font-weight: 400;
+            color: $text-gray;
+          }
+        }
+
+        &--desktop {
+          @include mediaQuery($device-lg) {
+            @include flex;
+            flex-direction: column;
           }
         }
       }
     }
+  }
+}
 
-    &--cp-text {
-      padding: 25px 0px;
-      @include fontSize(14px, 22px);
+.footer-copy-right {
+  @include flex;
+  @include flexJustifyContentCenter;
+  border-top: 1px solid $lighter-gray;
+
+  &__inner {
+    @include flexJustifyContentCenter;
+    @include mediaQuery($device-lg) {
+      flex-direction: column;
+      padding: 0;
+    }
+  }
+
+  &__links {
+    display: none;
+  }
+
+  @include mediaQuery($device-lg) {
+    border-top: none;
+    background-color: $lighter-gray;
+    justify-content: flex-start;
+    padding: 0 0 20px 20px;
+    flex-direction: column;
+
+    &__links {
+      @include flex;
+      justify-content: flex-start;
+      gap: 20px;
+      @include fontSize(14px, 21px);
       font-weight: 400;
-      color: $text-gray;
-      margin: 0;
-
-      @include mediaQuery($device-lg) {
-        padding-top: 25px;
-        padding-bottom: 10px;
+      color: $footer-link-color;
+   
+      &__item {
+        &::after {
+          content: "";
+          position: relative;
+          border-right: 1px solid $footer-link-color;
+          padding-right: 20px;
+          top: 2px;
+        }
       }
+    }
+  }
+
+  p {
+    padding: 25px 0px;
+    @include fontSize(14px, 22px);
+    font-weight: 400;
+    color: $text-gray;
+    margin: 0;
+
+    @include mediaQuery($device-lg) {
+      padding-top: 25px;
+      padding-bottom: 10px;
     }
   }
 }
