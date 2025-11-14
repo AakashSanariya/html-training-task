@@ -60,7 +60,7 @@
           @include flex;
           flex-direction: column;
           gap: 5px;
-          position: relative;
+          @include positionRelative;
 
           @include mediaQuery($device-lg) {
             gap: 8px;

@@ -25,7 +25,7 @@
       @include flex;
       @include flexJustifyContentCenter;
       @include flexAlignCenter;
-      position: relative;
+      @include positionRelative;
       width: 100%;
       background-color: $black;
       cursor: pointer;
@@ -84,11 +84,11 @@
   picture {
     height: 100%;
     width: 100%;
-    position: absolute;
+    @include positionCenter;
 
     img {
       opacity: 0.4;
-      position: absolute;
+      @include positionCenter;
       object-fit: cover;
       border-radius: 20px;
       height: 100%;
@@ -96,17 +96,8 @@
     }
   }
 
-  // img {
-  //   opacity: 0.4;
-  //   position: absolute;
-  //   object-fit: cover;
-  //   border-radius: 20px;
-  //   height: 100%;
-  //   width: 100%;
-  // }
-
   h2 {
-    position: absolute;
+    @include positionCenter;
     @include flex;
     @include flexJustifyContentCenter;
     @include fontSize(32px, 38px);

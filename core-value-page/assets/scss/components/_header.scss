@@ -16,7 +16,7 @@
   &__container {
     @include flexSpaceBetween;
     align-items: center;
-    position: relative;
+    @include positionRelative;
   }
 
   &__logo {
@@ -176,7 +176,7 @@
             @include flex;
             @include flexJustifyContentCenter;
             @include flexAlignCenter;
-            position: relative;
+            @include positionRelative;
 
             .form-control__input {
               border-radius: 28px;
@@ -278,7 +278,7 @@
     }
 
     &__btn {
-      position: relative;
+      @include positionRelative;
       &::after {
         display: none;
         color: $light-gray;

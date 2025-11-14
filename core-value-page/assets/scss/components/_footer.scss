@@ -25,7 +25,7 @@
         @include flex;
         @include flexSpaceBetween;
         gap: 20px;
-        position: relative;
+        @include positionRelative;
 
         &__item {
           &::after {
@@ -102,7 +102,7 @@
         height: 53px;
         border-radius: 26px;
         background-color: $input-light-bg;
-        position: relative;
+        @include positionRelative;
         border: none;
         gap: 20px;
 
@@ -232,7 +232,7 @@
       &__item {
         &::after {
           content: "";
-          position: relative;
+          @include positionRelative;
           border-right: 1px solid $footer-link-color;
           padding-right: 20px;
           top: 2px;
